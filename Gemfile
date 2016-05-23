@@ -26,9 +26,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # This gem deals with the user authentication
 gem 'devise'
 
+# This gem deals with linkedin oauth
+gem 'omniauth-linkedin'
+
 # Style bootstrap, adds vendor, adds bootswatch themes, adds font awesome icons
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'jquery-turbolinks'
 gem 'bootswatch-rails'
 gem "font-awesome-rails"
 

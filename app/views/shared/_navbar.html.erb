@@ -1,0 +1,42 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= root_path %>"><i class="fa fa-leaf" aria-hidden="true" style="color: #18BC9C"></i> ResuMate</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="<%= 'active' if current_page?(root_path) %>"><a href="<%= root_path %>">Home</a></li>
+      </ul>
+
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <%= current_user.email %>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <% if current_user.provider? == false %>
+              <li class="<%= 'active' if current_page?(edit_user_registration_path) %>"><a href="<%= edit_user_registration_path %>">Profile</a></li>
+              <% end %>
+              <li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to 'Log In', new_user_session_path %></li>
+          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+</nav>
