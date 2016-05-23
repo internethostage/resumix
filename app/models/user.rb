@@ -6,16 +6,18 @@ class User < ActiveRecord::Base
          :confirmable, :lockable,
          :omniauthable, :omniauth_providers => [:linkedin]
 
+  serialize :auth_raw_data
+
   def self.from_omniauth(auth)
      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
        user.provider = auth.provider
        user.uid = auth.uid
        user.email = auth.info.email
+       user.auth_raw_data = auth
        user.password = Devise.friendly_token[0,20]
        user.skip_confirmation!
      end
   end
-
 
 
 end
