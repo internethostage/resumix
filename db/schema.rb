@@ -11,10 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523215828) do
+ActiveRecord::Schema.define(version: 20160527024624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
+
+  create_table "resume_snippets", force: :cascade do |t|
+    t.integer  "position"
+    t.integer  "resume_id"
+    t.integer  "snippet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "resume_snippets", ["resume_id"], name: "index_resume_snippets_on_resume_id", using: :btree
+  add_index "resume_snippets", ["snippet_id"], name: "index_resume_snippets_on_snippet_id", using: :btree
+
+  create_table "resumes", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "template"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "resumes", ["user_id"], name: "index_resumes_on_user_id", using: :btree
+
+  create_table "snippets", force: :cascade do |t|
+    t.string   "name"
+    t.string   "type"
+    t.hstore   "properties"
+    t.integer  "user_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "version_of_id"
+  end
+
+  add_index "snippets", ["properties"], name: "index_snippets_on_properties", using: :gin
+  add_index "snippets", ["user_id"], name: "index_snippets_on_user_id", using: :btree
+  add_index "snippets", ["version_of_id"], name: "index_snippets_on_version_of_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -47,4 +83,9 @@ ActiveRecord::Schema.define(version: 20160523215828) do
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", using: :btree
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
+  add_foreign_key "resume_snippets", "resumes"
+  add_foreign_key "resume_snippets", "snippets"
+  add_foreign_key "resumes", "users"
+  add_foreign_key "snippets", "snippets", column: "version_of_id"
+  add_foreign_key "snippets", "users"
 end

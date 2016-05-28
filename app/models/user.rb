@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
 
   serialize :auth_raw_data
 
+  has_many :resumes
+  has_many :snippets
+  
+
   def self.from_omniauth(auth)
      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
        user.provider = auth.provider

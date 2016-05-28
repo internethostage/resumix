@@ -39,6 +39,12 @@ gem "font-awesome-rails"
 # To make form making a ton easier
 gem 'simple_form'
 
+# To use sort and reorder a number of objects in a list
+gem 'acts_as_list'
+
+# To define atributes with type coercion before storing (snippet properties hstore)
+gem 'virtus'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
