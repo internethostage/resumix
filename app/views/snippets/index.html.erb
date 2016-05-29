@@ -28,4 +28,6 @@
   </tbody>
 </table>
 
-<%= link_to 'See all snippets', sti_snippet_path %>
+<% unless current_page? sti_snippet_path %>
+  <%= link_to 'Back to Snippet Toolbox', sti_snippet_path %>
+<% end %>
