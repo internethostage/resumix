@@ -1,4 +1,4 @@
-class Snippet::OtherProperty
+class SnippetProperties::OtherProperty
   include Virtus.model
 
   attribute :title, String

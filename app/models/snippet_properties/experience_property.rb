@@ -1,8 +1,8 @@
-class Snippet::EducationProperty
+class SnippetProperties::ExperienceProperty
   include Virtus.model
 
   attribute :title, String
-  attribute :institution, String
+  attribute :organization, String
   attribute :location, String
   attribute :start_date, Date
   attribute :end_date, Date

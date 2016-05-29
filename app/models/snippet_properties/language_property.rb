@@ -1,8 +1,7 @@
-class Snippet::SkillProperty
+class SnippetProperties::LanguageProperty
   include Virtus.model
 
-  attribute :skill, String
-  attribute :description, String
+  attribute :language, String
   attribute :level, String
 
   def self.dump(properties)

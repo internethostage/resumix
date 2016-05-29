@@ -1,0 +1,31 @@
+<h1>Your Snippets</h1>
+<table class="table table-striped table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type</th>
+      <th>Properties</th>
+      <th>Actions</th>
+    </tr>
+</thead>
+  <tbody>
+    <% @snippets.each do |snippet| %>
+      <tr>
+        <td><%= snippet.name %></td>
+        <td><%= snippet.type %></td>
+        <td><% snippet.properties.to_hash.each do |k, v| %>
+            <%= "#{k.to_s.titleize}: #{v}" %>
+            <br>
+            <% end %>
+        </td>
+        <td><%= link_to 'Show', sti_snippet_path(snippet.type, snippet) %>
+            <%= link_to 'Edit', sti_snippet_path(snippet.type, snippet, :edit) %>
+            <%= link_to 'Destroy', sti_snippet_path(snippet.type, snippet), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to "See all #{snippet.type.pluralize}", sti_snippet_path(snippet.type) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'See all snippets', sti_snippet_path %>

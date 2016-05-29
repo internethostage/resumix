@@ -1,4 +1,4 @@
-class Snippet::SummaryProperty
+class SnippetProperties::SummaryProperty
   include Virtus.model
 
   attribute :body, String

@@ -1,0 +1,16 @@
+<%= simple_form_for @snippet do |f| %>
+
+    <%= f.input :name %>
+
+    <%= f.input :type do %>
+    <%= f.select :type, Snippet.types.map {|s| [s.humanize, s.camelcase]}, {}, disabled: @type != "Snippet" %>
+    <% end %>
+
+    <%= f.simple_fields_for :properties do |ff| %>
+        <%= ff.input :language %>
+        <%= ff.input :level %>
+    <% end %>
+
+
+    <%= f.submit %>
+<% end %>

@@ -1,4 +1,4 @@
-class Snippet::ReferenceProperty
+class SnippetProperties::EndorsementProperty
   include Virtus.model
 
   attribute :fullname, String

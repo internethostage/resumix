@@ -1,8 +1,9 @@
-class Snippet::AccomplishmentProperty
+class SnippetProperties::SkillProperty
   include Virtus.model
 
-  attribute :accomplishment, String
+  attribute :skill, String
   attribute :description, String
+  attribute :level, String
 
   def self.dump(properties)
     properties.to_hash

@@ -1,4 +1,4 @@
-class Snippet::InterestProperty
+class SnippetProperties::InterestProperty
   include Virtus.model
 
   attribute :interest, String

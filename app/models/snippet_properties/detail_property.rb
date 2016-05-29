@@ -1,4 +1,4 @@
-class Snippet::DetailProperty
+class SnippetProperties::DetailProperty
   include Virtus.model
 
   attribute :first_name, String
