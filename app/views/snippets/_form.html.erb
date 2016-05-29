@@ -1,16 +1,30 @@
 <%= simple_form_for @snippet do |f| %>
+  <%= f.input :name %>
 
-    <%= f.input :name %>
-
+  <% if @type == nil %>
     <%= f.input :type do %>
-    <%= f.select :type, Snippet.types.map {|s| [s.humanize, s.camelcase]}, {}, disabled: @type != "Snippet" %>
-    <% end %>
+  <% end %>
 
-    <%= f.simple_fields_for :properties do |ff| %>
-        <%= ff.input :language %>
-        <%= ff.input :level %>
-    <% end %>
+  <%= f.select :type, Snippet.types.map {|s| [s.humanize, s.camelcase]}, {}, disabled: @type != "Snippet" %>
+  <% end %>
 
 
-    <%= f.submit %>
+  <% if @type == "Accomplishment" %>
+    <%= render 'accomplishmentform', f: f %>
+  <% elsif @type == "Detail" %>
+    <%= render 'detailform', f: f %>
+  <% elsif @type == "Language" %>
+    <%= render 'languageform', f: f %>
+  <% elsif @type == "Education" %>
+    <%= render 'educationform', f: f %>
+
+
+
+
+
+
+
+  <% end %>
+
+  <%= f.submit %>
 <% end %>

@@ -60,7 +60,31 @@ class SnippetsController < ApplicationController
   end
 
   def snippet_params
-    params.require(type.underscore.to_sym).permit(:name, :type, {properties: [:language, :level] })
+    params.require(type.underscore.to_sym).permit(
+                                                  :name,
+                                                  :type,
+                                                  {properties: [
+                                                                :language,
+                                                                :level,
+                                                                :accomplishment,
+                                                                :description,
+                                                                :first_name,
+                                                                :last_name,
+                                                                :address,
+                                                                :address2,
+                                                                :zipcode,
+                                                                :phone,
+                                                                :email,
+                                                                :linkedin,
+                                                                :github,
+                                                                :other,
+                                                                :title,
+                                                                :institution,
+                                                                :location,
+                                                                :start_date,
+                                                                :end_date,
+                                                                :details
+                                                                ]})
   end
 
 
