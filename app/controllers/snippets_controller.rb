@@ -4,6 +4,9 @@ class SnippetsController < ApplicationController
 
   def index
     @snippets = type_class.all.order(type: :ASC)
+    @accomplishments = Accomplishment.all.order(name: :ASC)
+    @details = Detail.all.order(name: :ASC)
+    @languages = Language.all.order(name: :ASC)
   end
 
   def show
