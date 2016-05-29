@@ -1,7 +1,7 @@
 class SnippetProperties::SummaryProperty
   include Virtus.model
 
-  attribute :body, String
+  attribute :description, String
 
   def self.dump(properties)
     properties.to_hash

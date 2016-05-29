@@ -3,7 +3,7 @@ class SnippetsController < ApplicationController
   before_action :set_type
 
   def index
-    @snippets = type_class.all
+    @snippets = type_class.all.order(type: :ASC)
   end
 
   def show
@@ -64,14 +64,14 @@ class SnippetsController < ApplicationController
                                                   :name,
                                                   :type,
                                                   {properties: [
+                                                                :accomplishment,
+                                                                :address,
+                                                                :address2,
                                                                 :language,
                                                                 :level,
-                                                                :accomplishment,
                                                                 :description,
                                                                 :first_name,
                                                                 :last_name,
-                                                                :address,
-                                                                :address2,
                                                                 :zipcode,
                                                                 :phone,
                                                                 :email,
@@ -83,10 +83,16 @@ class SnippetsController < ApplicationController
                                                                 :location,
                                                                 :start_date,
                                                                 :end_date,
-                                                                :details
+                                                                :details,
+                                                                :fullname,
+                                                                :position,
+                                                                :company,
+                                                                :organization,
+                                                                :interest,
+                                                                :custom,
+                                                                :custom2,
+                                                                :skill,
                                                                 ]})
   end
-
-
 
 end

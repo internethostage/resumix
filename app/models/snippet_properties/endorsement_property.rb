@@ -2,7 +2,7 @@ class SnippetProperties::EndorsementProperty
   include Virtus.model
 
   attribute :fullname, String
-  attribute :relationship, String
+  attribute :position, String
   attribute :company, String
   attribute :email, String
   attribute :phone, String

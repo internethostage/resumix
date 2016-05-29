@@ -1,29 +1,31 @@
 <%= simple_form_for @snippet do |f| %>
   <%= f.input :name %>
 
-  <% if @type == nil %>
+
+  <% if @type == "Snippet" %>
     <%= f.input :type do %>
-  <% end %>
-
-  <%= f.select :type, Snippet.types.map {|s| [s.humanize, s.camelcase]}, {}, disabled: @type != "Snippet" %>
-  <% end %>
-
-
-  <% if @type == "Accomplishment" %>
-    <%= render 'accomplishmentform', f: f %>
+      <%= f.select :type, Snippet.types.map {|s| [s.humanize, s.camelcase]}, {}, disabled: @type != "Snippet" %>
+    <% end %>
+  <% elsif @type == "Accomplishment" %>
+    <%= render 'snippets/forms/accomplishmentform', f: f %>
   <% elsif @type == "Detail" %>
-    <%= render 'detailform', f: f %>
+    <%= render 'snippets/forms/detailform', f: f %>
   <% elsif @type == "Language" %>
-    <%= render 'languageform', f: f %>
+    <%= render 'snippets/forms/languageform', f: f %>
   <% elsif @type == "Education" %>
-    <%= render 'educationform', f: f %>
-
-
-
-
-
-
-
+    <%= render 'snippets/forms/educationform', f: f %>
+  <% elsif @type == "Endorsement" %>
+    <%= render 'snippets/forms/endorsementform', f: f %>
+  <% elsif @type == "Experience" %>
+    <%= render 'snippets/forms/experienceform', f: f %>
+  <% elsif @type == "Interest" %>
+    <%= render 'snippets/forms/interestform', f: f %>
+  <% elsif @type == "Other" %>
+    <%= render 'snippets/forms/otherform', f: f %>
+  <% elsif @type == "Skill" %>
+    <%= render 'snippets/forms/skillform', f: f %>
+  <% elsif @type == "Summary" %>
+    <%= render 'snippets/forms/summaryform', f: f %>
   <% end %>
 
   <%= f.submit %>

@@ -4,8 +4,8 @@ class SnippetProperties::OtherProperty
   attribute :title, String
   attribute :custom, String
   attribute :custom2, String
-  attribute :date_start, Date
-  attribute :date_end, Date
+  attribute :start_date, Date
+  attribute :end_date, Date
 
   def self.dump(properties)
     properties.to_hash
