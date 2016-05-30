@@ -1,0 +1,18 @@
+<h1>Resume Snippets Toolbox</h1>
+<%= link_to "Add New Snippet", new_snippet_path, class: "btn btn-xs btn-primary" %>
+<div class="row">
+  <div class="col-md-6">
+    <div class = "panel-group" id = "accordion">
+      <%= render 'snippets/lists/accomplishments' %>
+      <%= render 'snippets/lists/details' %>
+      <%= render 'snippets/lists/educations' %>
+      <%= render 'snippets/lists/experiences' %>
+      <%= render 'snippets/lists/interests' %>
+      <%= render 'snippets/lists/languages' %>
+      <%= render 'snippets/lists/others' %>
+      <%= render 'snippets/lists/references' %>
+      <%= render 'snippets/lists/skills' %>
+      <%= render 'snippets/lists/summary' %>
+    </div>
+  </div>
+</div>

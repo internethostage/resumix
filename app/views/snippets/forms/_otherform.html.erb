@@ -1,0 +1,9 @@
+<%= f.simple_fields_for :properties, OpenStruct.new(f.object.properties.to_hash) do |ff| %>
+  <%= ff.input :title, required: false %>
+  <%= ff.input :custom, required: false %>
+  <%= ff.input :custom2, required: false, input_html: { rows: 4 } %>
+  <%= ff.input :start_date, required: false, html5: true %>
+  <%= ff.input :end_date, as: :date, start_year: Date.today.year - 30,
+                              end_year: Date.today.year, discard_day: true,
+                              order: [:month, :year], required: false %>
+<% end %>

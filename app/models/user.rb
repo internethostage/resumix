@@ -10,7 +10,9 @@ class User < ActiveRecord::Base
 
   has_many :resumes
   has_many :snippets
-  
+
+  delegate :accomplishments, :details, :educations, :experiences, :interests, :languages, :others, :endorsements, :skills, :summaries, to: :snippets
+
 
   def self.from_omniauth(auth)
      where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

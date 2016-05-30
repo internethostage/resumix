@@ -5,6 +5,19 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'static_pages#index'
+  resources :snippets
+  resources :accomplishments, controller: 'snippets', type: 'Accomplishment'
+  resources :details,         controller: 'snippets', type: 'Detail'
+  resources :educations,      controller: 'snippets', type: 'Education'
+  resources :endorsements,    controller: 'snippets', type: 'Endorsement'
+  resources :experiences,     controller: 'snippets', type: 'Experience'
+  resources :interests,       controller: 'snippets', type: 'Interest'
+  resources :languages,       controller: 'snippets', type: 'Language'
+  resources :others,          controller: 'snippets', type: 'Other'
+  resources :skills,          controller: 'snippets', type: 'Skill'
+  resources :summaries,       controller: 'snippets', type: 'Summary'
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

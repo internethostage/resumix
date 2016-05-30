@@ -16,4 +16,5 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= flashmsgdisabler
+//= accordionarrow
 //= require_tree .
