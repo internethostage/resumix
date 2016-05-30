@@ -1,34 +1,34 @@
 <div class = "panel panel-default">
-   <div class = "panel-heading">
-      <h4 class = "panel-title">
-         <a data-toggle = "collapse" data-parent = "#accordion" href = "#collapseTwo">
-            Detail Snippets
-         </a>
-      </h4>
-   </div>
+  <div class = "panel-heading">
+    <h4 class = "panel-title">
+      <a data-toggle = "collapse" data-parent = "#accordion" href = "#collapseTwo">
+        Detail Snippets
+      </a>
+    </h4>
+  </div>
 
-   <div id = "collapseTwo" class = "panel-collapse collapse">
-     <div class="panel-body">
-       <% @details.each do |detail| %>
+  <div id = "collapseTwo" class = "panel-collapse collapse">
+    <div class="add_new_button">
+      <%= link_to 'Add new Detail', new_detail_path, class: "btn btn-block btn-info" %>
+    </div>
+    <div class="panel-body">
+      <% @details.each do |detail| %>
         <div class="well well-sm" draggable="true">
           <h3> <%= detail.name %> </h3>
-           <ul>
-             <li><%= detail.properties.first_name %></li>
-             <li><%= detail.properties.last_name %></li>
-             <li><%= detail.properties.address %></li>
-             <li><%= detail.properties.address2 %></li>
-             <li><%= detail.properties.zipcode %></li>
-             <li><%= detail.properties.phone %></li>
-             <li><%= detail.properties.email %></li>
-             <li><%= detail.properties.linkedin %></li>
-             <li><%= detail.properties.github %></li>
-             <li><%= detail.properties.other %></li>
-           </ul>
-           <%= link_to 'Edit', sti_snippet_path(detail.type, detail.id, :edit), class: "btn btn-xs btn-primary" %>
-           <%= link_to 'Destroy', sti_snippet_path(detail.type, detail.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-primary" %>
-       </div>
-       <% end %>
-     </div>
-   </div>
+          <ul>
+            <% detail.properties.to_hash.each do |prop, value| %>
+              <% unless value == "" || value == nil %>
+                <li><span class="snippet-title"><%= prop.capitalize %></span>: <%= value %></li>
+              <% end %>
+            <% end %>
+          </ul>
+          <div class="snippet-controls">
+            <%= link_to 'Edit', sti_snippet_path(detail.type, detail.id, :edit), class: "btn btn-xs btn-warning" %>
+            <%= link_to 'Destroy', sti_snippet_path(detail.type, detail.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
 
 </div>

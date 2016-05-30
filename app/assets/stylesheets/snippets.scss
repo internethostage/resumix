@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 a:focus,
 a:hover,
 a:active {
@@ -35,7 +34,11 @@ a:active {
 }
 
 .panel-heading {
-  background-color: #009688 !important;
+  background: rgb(0,150,136)!important;
+  background: -moz-linear-gradient(top,  rgba(0,150,136,1) 0%, rgba(16,124,121,1) 100%)!important;
+  background: -webkit-linear-gradient(top,  rgba(0,150,136,1) 0%,rgba(16,124,121,1) 100%)!important;
+  background: linear-gradient(to bottom,  rgba(0,150,136,1) 0%,rgba(16,124,121,1) 100%)!important;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009688', endColorstr='#107c79',GradientType=0 );
   border-radius: 0;
   border: none;
   color: #fff !important;
@@ -45,7 +48,12 @@ a:active {
 .panel-heading:focus,
 .panel-heading:hover,
 .panel-heading.active {
-  background-color: #008988 !important;
+  background: rgb(0,150,136)!important;
+  background: -moz-linear-gradient(top,  rgba(0,150,136,0.8) 0%, rgba(16,124,121,0.8) 100%)!important;
+  background: -webkit-linear-gradient(top,  rgba(0,150,136,0.8) 0%,rgba(16,124,121,0.8) 100%)!important;
+  background: linear-gradient(to bottom,  rgba(0,150,136,0.8) 0%,rgba(16,124,121,0.8) 100%)!important;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#009688', endColorstr='#99107c79',GradientType=0 );
+
 }
 
 
@@ -126,4 +134,14 @@ a:active {
 #accordion .panel-heading.active a:before {
   transform: rotate(0deg);
   transition: all 0.5s;
+}
+
+span.snippet-title {
+    font-weight: bold;
+    font-style: oblique;
+    text-decoration: underline;
+}
+
+.snippet-controls {
+    text-align: right;
 }
