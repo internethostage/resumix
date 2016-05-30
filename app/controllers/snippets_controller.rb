@@ -3,10 +3,17 @@ class SnippetsController < ApplicationController
   before_action :set_type
 
   def index
-    @snippets = type_class.all.order(type: :ASC)
-    @accomplishments = Accomplishment.all.order(name: :ASC)
-    @details = Detail.all.order(name: :ASC)
-    @languages = Language.all.order(name: :ASC)
+    @snippets        = type_class.all.order(type: :ASC)
+    @accomplishments = current_user.accomplishments.order(name: :ASC)
+    @details         = current_user.details.order(name: :ASC)
+    @educations      = current_user.educations.order(name: :ASC)
+    @endorsements    = current_user.endorsements.order(name: :ASC)
+    @experiences     = current_user.experiences.order(name: :ASC)
+    @interests       = current_user.interests.order(name: :ASC)
+    @languages       = current_user.languages.order(name: :ASC)
+    @others          = current_user.others.order(name: :ASC)
+    @skills          = current_user.skills.order(name: :ASC)
+    @summaries       = current_user.summaries.order(name: :ASC)
   end
 
   def show
@@ -32,7 +39,7 @@ class SnippetsController < ApplicationController
 
   def update
     if @snippet.update snippet_params
-      redirect_to @snippet, notice: "#{@snippet.type} was successfully updated."
+      redirect_to snippets_url, notice: "#{@snippet.type} was successfully updated."
     else
       render action: 'edit'
     end

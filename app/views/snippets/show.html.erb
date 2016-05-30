@@ -1,5 +1,6 @@
 <h1>Hi, I'm a <%= @snippet.type %>.</h1>
 <p>My name is <%= @snippet.name %></p>
+<p>My owner is <%= @snippet.user.email %></p>
 <p>My properties are:<br>
     <% @snippet.properties.to_hash.each do |k, v| %>
     <%= "#{k.to_s.titleize}: #{v}" %>

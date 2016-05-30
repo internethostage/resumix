@@ -1,0 +1,30 @@
+<div class = "panel panel-default">
+   <div class = "panel-heading">
+      <h4 class = "panel-title">
+         <a data-toggle = "collapse" data-parent = "#accordion" href = "#collapseFour">
+            Experience Snippets
+         </a>
+      </h4>
+   </div>
+
+   <div id = "collapseFour" class = "panel-collapse collapse">
+     <div class="panel-body">
+       <% @experiences.each do |experience| %>
+        <div class="well well-sm" draggable="true">
+          <h3> <%= experience.name %> </h3>
+           <ul>
+             <li><%= experience.properties.title %></li>
+             <li><%= experience.properties.organization %></li>
+             <li><%= experience.properties.location %></li>
+             <li><%= experience.properties.start_date %></li>
+             <li><%= experience.properties.end_date %></li>
+             <li><%= experience.properties.details %></li>
+           </ul>
+           <%= link_to 'Edit', sti_snippet_path(experience.type, experience.id, :edit), class: "btn btn-xs btn-primary" %>
+           <%= link_to 'Destroy', sti_snippet_path(experience.type, experience.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-primary" %>
+       </div>
+       <% end %>
+     </div>
+   </div>
+
+</div>

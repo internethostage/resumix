@@ -1,0 +1,26 @@
+<div class = "panel panel-default">
+   <div class = "panel-heading">
+      <h4 class = "panel-title">
+         <a data-toggle = "collapse" data-parent = "#accordion" href = "#collapseFive">
+            Interest Snippets
+         </a>
+      </h4>
+   </div>
+
+   <div id = "collapseFive" class = "panel-collapse collapse">
+     <div class="panel-body">
+       <% @interests.each do |interest| %>
+        <div class="well well-sm" draggable="true">
+          <h3> <%= interest.name %> </h3>
+           <ul>
+             <li><%= interest.properties.interest %></li>
+             <li><%= interest.properties.description %></li>
+           </ul>
+           <%= link_to 'Edit', sti_snippet_path(interest.type, interest.id, :edit), class: "btn btn-xs btn-primary" %>
+           <%= link_to 'Destroy', sti_snippet_path(interest.type, interest.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-primary" %>
+       </div>
+       <% end %>
+     </div>
+   </div>
+
+</div>

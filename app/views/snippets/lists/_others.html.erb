@@ -1,0 +1,29 @@
+<div class = "panel panel-default">
+   <div class = "panel-heading">
+      <h4 class = "panel-title">
+         <a data-toggle = "collapse" data-parent = "#accordion" href = "#collapseSeven">
+            Other Snippets
+         </a>
+      </h4>
+   </div>
+
+   <div id = "collapseSeven" class = "panel-collapse collapse">
+     <div class="panel-body">
+       <% @others.each do |other| %>
+        <div class="well well-sm" draggable="true">
+          <h3> <%= other.name %> </h3>
+           <ul>
+             <li><%= other.properties.title %></li>
+             <li><%= other.properties.custom %></li>
+             <li><%= other.properties.custom2 %></li>
+             <li><%= other.properties.start_date %></li>
+             <li><%= other.properties.end_date %></li>
+           </ul>
+           <%= link_to 'Edit', sti_snippet_path(other.type, other.id, :edit), class: "btn btn-xs btn-primary" %>
+           <%= link_to 'Destroy', sti_snippet_path(other.type, other.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-primary" %>
+       </div>
+       <% end %>
+     </div>
+   </div>
+
+</div>

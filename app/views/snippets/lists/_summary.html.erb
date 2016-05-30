@@ -1,0 +1,25 @@
+<div class = "panel panel-default">
+   <div class = "panel-heading">
+      <h4 class = "panel-title">
+         <a data-toggle = "collapse" data-parent = "#accordion" href = "#collapseTen">
+            Summary Snippets
+         </a>
+      </h4>
+   </div>
+
+   <div id = "collapseTen" class = "panel-collapse collapse">
+     <div class="panel-body">
+       <% @summaries.each do |summary| %>
+        <div class="well well-sm" draggable="true">
+          <h3> <%= summary.name %> </h3>
+           <ul>
+             <li><%= summary.properties.description %></li>
+           </ul>
+           <%= link_to 'Edit', sti_snippet_path(summary.type, summary.id, :edit), class: "btn btn-xs btn-primary" %>
+           <%= link_to 'Destroy', sti_snippet_path(summary.type, summary.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-primary" %>
+       </div>
+       <% end %>
+     </div>
+   </div>
+
+</div>

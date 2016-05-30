@@ -1,0 +1,29 @@
+<div class = "panel panel-default">
+   <div class = "panel-heading">
+      <h4 class = "panel-title">
+         <a data-toggle = "collapse" data-parent = "#accordion" href = "#collapseEight">
+            Reference Snippets
+         </a>
+      </h4>
+   </div>
+
+   <div id = "collapseEight" class = "panel-collapse collapse">
+     <div class="panel-body">
+       <% @endorsements.each do |endorsement| %>
+        <div class="well well-sm" draggable="true">
+          <h3> <%= endorsement.name %> </h3>
+           <ul>
+             <li><%= endorsement.properties.fullname %></li>
+             <li><%= endorsement.properties.position %></li>
+             <li><%= endorsement.properties.company %></li>
+             <li><%= endorsement.properties.email %></li>
+             <li><%= endorsement.properties.phone %></li>
+           </ul>
+           <%= link_to 'Edit', sti_snippet_path(endorsement.type, endorsement.id, :edit), class: "btn btn-xs btn-primary" %>
+           <%= link_to 'Destroy', sti_snippet_path(endorsement.type, endorsement.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-primary" %>
+       </div>
+       <% end %>
+     </div>
+   </div>
+
+</div>
