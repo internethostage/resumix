@@ -11,7 +11,7 @@
     <div class="add_new_button">
       <%= link_to 'Add new Reference', new_endorsement_path, class: "btn btn-block btn-info" %>
     </div>
-    <div class="panel-body">
+    <div class="panel-body" id="references">
       <% @endorsements.each do |endorsement| %>
         <%= render 'snippets/snippet/reference', endorsement: endorsement %>
       <% end %>

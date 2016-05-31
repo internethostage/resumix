@@ -11,7 +11,7 @@
     <div class="add_new_button">
       <%= link_to 'Add new Detail', new_detail_path, class: "btn btn-block btn-info" %>
     </div>
-    <div class="panel-body">
+    <div class="panel-body" id="details">
       <% @details.each do |detail| %>
         <%= render 'snippets/snippet/detail', detail: detail %>
       <% end %>

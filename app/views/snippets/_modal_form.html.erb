@@ -1,0 +1,45 @@
+<%= simple_form_for @snippet, remote: true do |f| %>
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title" id="myModalLabel">Edit Snippet</h4>
+    </div>
+    <div class="modal-body">
+
+      <%= f.input :name %>
+
+      
+      <% if @type == "Snippet" %>
+      <%= f.input :type do %>
+      <%= f.select :type, Snippet.types.map {|s| [s.humanize, s.camelcase]}, {}, disabled: @type != "Snippet" %>
+      <% end %>
+      <% elsif @type == "Accomplishment" %>
+      <%= render 'snippets/forms/accomplishmentform', f: f %>
+      <% elsif @type == "Detail" %>
+      <%= render 'snippets/forms/detailform', f: f %>
+      <% elsif @type == "Language" %>
+      <%= render 'snippets/forms/languageform', f: f %>
+      <% elsif @type == "Education" %>
+      <%= render 'snippets/forms/educationform', f: f %>
+      <% elsif @type == "Endorsement" %>
+      <%= render 'snippets/forms/endorsementform', f: f %>
+      <% elsif @type == "Experience" %>
+      <%= render 'snippets/forms/experienceform', f: f %>
+      <% elsif @type == "Interest" %>
+      <%= render 'snippets/forms/interestform', f: f %>
+      <% elsif @type == "Other" %>
+      <%= render 'snippets/forms/otherform', f: f %>
+      <% elsif @type == "Skill" %>
+      <%= render 'snippets/forms/skillform', f: f %>
+      <% elsif @type == "Summary" %>
+      <%= render 'snippets/forms/summaryform', f: f %>
+      <% end %>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <%= f.submit data: {disable_with: "submitting..."}, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -3,16 +3,36 @@
 <div class="row">
   <div class="col-md-6">
     <div class = "panel-group" id = "accordion">
-      <%= render 'snippets/lists/accomplishments' %>
-      <%= render 'snippets/lists/details' %>
-      <%= render 'snippets/lists/educations' %>
-      <%= render 'snippets/lists/experiences' %>
-      <%= render 'snippets/lists/interests' %>
-      <%= render 'snippets/lists/languages' %>
-      <%= render 'snippets/lists/others' %>
-      <%= render 'snippets/lists/references' %>
-      <%= render 'snippets/lists/skills' %>
-      <%= render 'snippets/lists/summary' %>
+      <%= render 'snippets/blocks/accomplishments' %>
+      <%= render 'snippets/blocks/details' %>
+      <%= render 'snippets/blocks/educations' %>
+      <%= render 'snippets/blocks/experiences' %>
+      <%= render 'snippets/blocks/interests' %>
+      <%= render 'snippets/blocks/languages' %>
+      <%= render 'snippets/blocks/others' %>
+      <%= render 'snippets/blocks/references' %>
+      <%= render 'snippets/blocks/skills' %>
+      <%= render 'snippets/blocks/summary' %>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="edit-snippet" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Edit Snippet</h4>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
     </div>
   </div>
 </div>

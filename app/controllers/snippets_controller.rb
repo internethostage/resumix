@@ -1,19 +1,9 @@
 class SnippetsController < ApplicationController
   before_action :set_snippet, only: [:show, :edit, :update, :destroy]
+  before_action :all_user_snippets_by_type, only: [:index, :update]
   before_action :set_type
 
   def index
-    @snippets        = type_class.all.order(type: :ASC)
-    @accomplishments = current_user.accomplishments.order(name: :ASC)
-    @details         = current_user.details.order(name: :ASC)
-    @educations      = current_user.educations.order(name: :ASC)
-    @endorsements    = current_user.endorsements.order(name: :ASC)
-    @experiences     = current_user.experiences.order(name: :ASC)
-    @interests       = current_user.interests.order(name: :ASC)
-    @languages       = current_user.languages.order(name: :ASC)
-    @others          = current_user.others.order(name: :ASC)
-    @skills          = current_user.skills.order(name: :ASC)
-    @summaries       = current_user.summaries.order(name: :ASC)
   end
 
   def show
@@ -39,11 +29,15 @@ class SnippetsController < ApplicationController
 
   def update
     if @snippet.update snippet_params
-      redirect_to snippets_url, notice: "#{@snippet.type} was successfully updated."
+      respond_to do |format|
+        format.html { redirect_to snippets_url, notice: "#{@snippet.type} was successfully updated." }
+        format.js   { render }
+      end
     else
       render action: 'edit'
     end
   end
+
 
   def destroy
     @snippet.destroy
@@ -70,6 +64,19 @@ class SnippetsController < ApplicationController
 
   def set_snippet
     @snippet = type_class.find(params[:id])
+  end
+
+  def all_user_snippets_by_type
+    @accomplishments = current_user.accomplishments.order(name: :ASC)
+    @details         = current_user.details.order(name: :ASC)
+    @educations      = current_user.educations.order(name: :ASC)
+    @endorsements    = current_user.endorsements.order(name: :ASC)
+    @experiences     = current_user.experiences.order(name: :ASC)
+    @interests       = current_user.interests.order(name: :ASC)
+    @languages       = current_user.languages.order(name: :ASC)
+    @others          = current_user.others.order(name: :ASC)
+    @skills          = current_user.skills.order(name: :ASC)
+    @summaries       = current_user.summaries.order(name: :ASC)
   end
 
   def snippet_params

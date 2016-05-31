@@ -11,7 +11,7 @@
     <div class="add_new_button">
       <%= link_to 'Add new Other', new_other_path, class: "btn btn-block btn-info" %>
     </div>
-    <div class="panel-body">
+    <div class="panel-body" id="others">
       <% @others.each do |other| %>
         <%= render 'snippets/snippet/other', other: other %>
       <% end %>

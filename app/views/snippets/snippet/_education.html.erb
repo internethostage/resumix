@@ -8,7 +8,10 @@
     <% end %>
   </ul>
   <div class="snippet-controls">
-    <%= link_to 'Edit', sti_snippet_path(education.type, education.id, :edit), class: "btn btn-xs btn-warning" %>
+    <%= link_to 'Edit', sti_snippet_path(education.type, education.id, :edit),
+                        remote: true,
+                        data: {toggle: "modal", target: "#edit-snippet"},
+                        class: "btn btn-xs btn-warning" %>
     <%= link_to 'Delete', sti_snippet_path(education.type, education.id),
                           method: :delete,
                           data: { confirm: 'Are you sure?' },

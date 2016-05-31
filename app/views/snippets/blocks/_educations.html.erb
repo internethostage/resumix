@@ -11,7 +11,7 @@
     <div class="add_new_button">
       <%= link_to 'Add new Education', new_education_path, class: "btn btn-block btn-info" %>
     </div>
-    <div class="panel-body">
+    <div class="panel-body" id="educations">
       <% @educations.each do |education| %>
         <%= render 'snippets/snippet/education', education: education %>
       <% end %>

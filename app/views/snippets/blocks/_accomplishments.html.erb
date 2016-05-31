@@ -11,7 +11,7 @@
     <div class="add_new_button">
       <%= link_to 'Add new Accomplishment', new_accomplishment_path, class: "btn btn-block btn-info" %>
     </div>
-    <div class="panel-body">
+    <div class="panel-body" id="accomplishments">
       <% @accomplishments.each do |accomplishment| %>
         <%= render 'snippets/snippet/accomplishment', accomplishment: accomplishment %>
       <% end %>

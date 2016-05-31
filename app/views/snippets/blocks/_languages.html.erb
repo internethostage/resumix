@@ -11,7 +11,7 @@
     <div class="add_new_button">
       <%= link_to 'Add new Language', new_language_path, class: "btn btn-block btn-info" %>
     </div>
-    <div class="panel-body">
+    <div class="panel-body" id="languages">
       <% @languages.each do |language| %>
         <%= render 'snippets/snippet/language', language: language %>
       <% end %>

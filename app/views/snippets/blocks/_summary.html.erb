@@ -11,7 +11,7 @@
     <div class="add_new_button">
       <%= link_to 'Add new Summary', new_summary_path, class: "btn btn-block btn-info" %>
     </div>
-    <div class="panel-body">
+    <div class="panel-body" id="summaries">
       <% @summaries.each do |summary| %>
         <%= render 'snippets/snippet/summary', summary: summary %>
       <% end %>
