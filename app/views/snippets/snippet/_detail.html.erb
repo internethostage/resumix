@@ -1,0 +1,18 @@
+<div class="well well-sm" draggable="true" id="<%= dom_id(detail) %>">
+  <h3> <%= detail.name %> </h3>
+  <ul>
+    <% detail.properties.to_hash.each do |prop, value| %>
+      <% unless value == "" || value == nil %>
+        <li><span class="snippet-title"><%= prop.capitalize %></span>: <%= value %></li>
+      <% end %>
+    <% end %>
+  </ul>
+  <div class="snippet-controls">
+    <%= link_to 'Edit', sti_snippet_path(detail.type, detail.id, :edit), class: "btn btn-xs btn-warning" %>
+    <%= link_to 'Delete', sti_snippet_path(detail.type, detail.id),
+                          method: :delete,
+                          data: { confirm: 'Are you sure?' },
+                          class: "btn btn-xs btn-danger",
+                          remote: true %>
+  </div>
+</div>
