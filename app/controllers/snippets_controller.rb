@@ -47,7 +47,10 @@ class SnippetsController < ApplicationController
 
   def destroy
     @snippet.destroy
-    redirect_to snippets_url
+    respond_to do |format|
+      format.html { redirect_to snippets_url}
+      format.js   { render }
+    end
   end
 
 

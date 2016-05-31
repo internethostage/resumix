@@ -13,7 +13,7 @@
     </div>
     <div class="panel-body">
       <% @others.each do |other| %>
-        <div class="well well-sm" draggable="true">
+        <div class="well well-sm" draggable="true" id="<%= dom_id(other) %>">
           <h3> <%= other.name %> </h3>
           <ul>
             <% other.properties.to_hash.each do |prop, value| %>
@@ -24,7 +24,11 @@
           </ul>
           <div class="snippet-controls">
             <%= link_to 'Edit', sti_snippet_path(other.type, other.id, :edit), class: "btn btn-xs btn-warning" %>
-            <%= link_to 'Destroy', sti_snippet_path(other.type, other.id), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" %>
+            <%= link_to 'Delete', sti_snippet_path(other.type, other.id),
+                                  method: :delete,
+                                  data: { confirm: 'Are you sure?' },
+                                  class: "btn btn-xs btn-danger",
+                                  remote: true %>
           </div>
         </div>
       <% end %>
