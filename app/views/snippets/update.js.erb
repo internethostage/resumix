@@ -1,23 +1,7 @@
 $("#edit-snippet").html("<%= j render 'modal_form' %>");
-<% if @type == "Accomplishment" %>
-$("#accomplishments").html("<%= j render 'snippets/lists/accomplishmentslist', accomplishments: @accomplishments %>");
-<% elsif @type == "Detail" %>
-$("#details").html("<%= j render 'snippets/lists/detailslist', details: @details %>");
-<% elsif @type == "Education" %>
-$("#educations").html("<%= j render 'snippets/lists/educationslist', educations: @educations %>");
-<% elsif @type == "Experience" %>
-$("#experiences").html("<%= j render 'snippets/lists/experienceslist', experiences: @experiences %>");
-<% elsif @type == "Interest" %>
-$("#interests").html("<%= j render 'snippets/lists/interestslist', interests: @interests %>");
-<% elsif @type == "Language" %>
-$("#languages").html("<%= j render 'snippets/lists/languageslist', languages: @languages %>");
-<% elsif @type == "Other" %>
-$("#others").html("<%= j render 'snippets/lists/otherslist', others: @others %>");
-<% elsif @type == "Endorsement" %>
-$("#references").html("<%= j render 'snippets/lists/referenceslist', endorsements: @endorsements %>");
-<% elsif @type == "Skill" %>
-$("#skills").html("<%= j render 'snippets/lists/skillslist', skills: @skills %>");
-<% elsif @type == "Summary" %>
-$("#summaries").html("<%= j render 'snippets/lists/summarieslist', summaries: @summaries %>");
+<% if @type == "Endorsement" %>
+$('#references').html("<%= j render 'snippets/lists/referenceslist', endorsements: @endorsements %>")
+<% else %>
+$('#<%= @type.downcase.pluralize %>').html("<%= j render "snippets/lists/#{@type.downcase.pluralize}list", @type.downcase.pluralize => current_user.send(@type.downcase.pluralize).order(name: :asc) %>")
 <% end %>
 $("#edit-snippet").modal("hide")

@@ -1,6 +1,6 @@
 class SnippetsController < ApplicationController
   before_action :set_snippet, only: [:show, :edit, :update, :destroy]
-  before_action :all_user_snippets_by_type, only: [:index, :update]
+  before_action :all_user_snippets_by_type, only: [:index, :create, :update]
   before_action :set_type
 
   def index
@@ -17,10 +17,14 @@ class SnippetsController < ApplicationController
     user = current_user
     @snippet = type_class.new snippet_params
     @snippet.user = user
-    if @snippet.save
-      redirect_to @snippet, notice: "#{@snippet.type} was successfully created."
-    else
-      render action: 'new'
+    respond_to do |format|
+      if @snippet.save
+        format.html { redirect_to @snippet, notice: "#{@snippet.type} was successfully created." }
+        format.js { render :create_success }
+      else
+        format.html {render action: 'new' }
+        format.js { render :create_failure }
+      end
     end
   end
 

@@ -9,7 +9,10 @@
 
   <div id = "collapseThree" class = "panel-collapse collapse">
     <div class="add_new_button">
-      <%= link_to 'Add new Education', new_education_path, class: "btn btn-block btn-info" %>
+      <%= link_to 'Add new Education', new_education_path,
+                                        remote: true,
+                                        data: {toggle: "modal", target: "#new-snippet"},
+                                        class: "btn btn-block btn-info" %>
     </div>
     <div class="panel-body" id="educations">
       <% @educations.each do |education| %>
