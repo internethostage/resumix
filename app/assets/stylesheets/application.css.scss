@@ -13,30 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-// To display alerts
-.alert-alert {
-  @extend .alert-danger;
-}
-// To display notices
-.alert-notice {
-  @extend .alert-success;
-}
-
-//Import bootstrap-sprockets
-@import "bootstrap-sprockets";
-
-// Flatly theme variables
-@import "bootswatch/flatly/variables";
-
-// Bootstrap
-@import "bootstrap";
-
-// Bootstrap body padding for fixed navbar
-body { padding-top: 80px; }
-
-// The flatly bootswatch theme file
-@import "bootswatch/flatly/bootswatch";
-
-// The font-awesome style
-@import "font-awesome";
