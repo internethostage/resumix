@@ -4,8 +4,8 @@ class SnippetProperties::EducationProperty
   attribute :title, String
   attribute :institution, String
   attribute :location, String
-  attribute :start_date, Date
-  attribute :end_date, Date
+  attribute :start_date, String
+  attribute :end_date, String
   attribute :details, String
 
   def self.dump(properties)

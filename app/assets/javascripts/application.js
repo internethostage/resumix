@@ -17,5 +17,6 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= flashmsgdisabler
+//= datepicker
 //= accordionarrow
 //= require_tree .
