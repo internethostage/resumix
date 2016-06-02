@@ -1,0 +1,24 @@
+<div class = "panel panel-default">
+  <div class = "panel-heading">
+    <h4 class = "panel-title">
+      <a data-toggle = "collapse" data-parent = "#accordion" href = "#collapseOne">
+        Accomplishment Snippets
+      </a>
+    </h4>
+  </div>
+
+  <div id = "collapseOne" class = "panel-collapse collapse">
+    <div class="add_new_button">
+      <%= link_to 'Add new Accomplishment', new_accomplishment_path,
+                                            remote: true,
+                                            data: {toggle: "modal", target: "#new-snippet"},
+                                            class: "btn btn-block btn-info" %>
+    </div>
+    <div class="panel-body" id="accomplishments">
+      <% @accomplishments.each do |accomplishment| %>
+        <%= render 'snippets/snippet/accomplishment', accomplishment: accomplishment %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

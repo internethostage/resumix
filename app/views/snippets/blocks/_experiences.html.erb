@@ -1,0 +1,24 @@
+<div class = "panel panel-default">
+  <div class = "panel-heading">
+    <h4 class = "panel-title">
+      <a data-toggle = "collapse" data-parent = "#accordion" href = "#collapseFour">
+        Experience Snippets
+      </a>
+    </h4>
+  </div>
+
+  <div id = "collapseFour" class = "panel-collapse collapse">
+    <div class="add_new_button">
+      <%= link_to 'Add new Experience', new_experience_path,
+                                        remote: true,
+                                        data: {toggle: "modal", target: "#new-snippet"},
+                                        class: "btn btn-block btn-info" %>
+    </div>
+    <div class="panel-body" id="experiences">
+      <% @experiences.each do |experience| %>
+        <%= render 'snippets/snippet/experience', experience: experience %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
