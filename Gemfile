@@ -45,6 +45,9 @@ gem 'acts_as_list'
 # To define atributes with type coercion before storing (snippet properties hstore)
 gem 'virtus'
 
+# Gem used for datepicker and drop n drag functionality
+gem 'jquery-ui-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

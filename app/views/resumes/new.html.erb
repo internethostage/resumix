@@ -1,18 +1,23 @@
-<h1 id="resume">Resume Snippets Toolbox</h1>
-<div class="row">
-  <div class="col-md-offset-3 col-md-6">
-    <div class = "panel-group snippets-accordion" id = "accordion">
-      <%= render 'snippets/blocks/accomplishments' %>
-      <%= render 'snippets/blocks/details' %>
-      <%= render 'snippets/blocks/educations' %>
-      <%= render 'snippets/blocks/experiences' %>
-      <%= render 'snippets/blocks/interests' %>
-      <%= render 'snippets/blocks/languages' %>
-      <%= render 'snippets/blocks/others' %>
-      <%= render 'snippets/blocks/references' %>
-      <%= render 'snippets/blocks/skills' %>
-      <%= render 'snippets/blocks/summary' %>
-    </div>
+<div class="col-sm-6">
+<h1 id="resume">Resume Builder</h1>
+<div class="resume-help"> Drag and drop the resume pieces you want to add on your resume and once ready click on the save button at the bottom!</div>
+<div id="trash"><i class="fa fa-2x fa-trash" aria-hidden="true"></i></div>
+<div id="resumebox"><div class="placeholder">Drag and drop your resume snippets here</div></div>
+</div>
+
+<div class="col-sm-offset-1 col-sm-5">
+<h2 class="text-center"> Resume Snippets</h2>
+  <div class="panel-group" id="accordion">
+    <%= render 'snippets/blocks/accomplishments' %>
+    <%= render 'snippets/blocks/details' %>
+    <%= render 'snippets/blocks/educations' %>
+    <%= render 'snippets/blocks/experiences' %>
+    <%= render 'snippets/blocks/interests' %>
+    <%= render 'snippets/blocks/languages' %>
+    <%= render 'snippets/blocks/others' %>
+    <%= render 'snippets/blocks/references' %>
+    <%= render 'snippets/blocks/skills' %>
+    <%= render 'snippets/blocks/summary' %>
   </div>
 </div>
 

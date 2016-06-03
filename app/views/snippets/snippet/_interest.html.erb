@@ -1,5 +1,5 @@
-<div class="well well-sm" draggable="true" id="<%= dom_id(interest) %>">
-  <h3> <%= interest.name %> </h3>
+<div class="well well-sm well-snippet" id="<%= dom_id(interest) %>">
+  <div class="snippet-name"> <%= interest.name %> </div>
   <ul>
     <% interest.properties.to_hash.each do |prop, value| %>
       <% unless value == "" || value == nil %>

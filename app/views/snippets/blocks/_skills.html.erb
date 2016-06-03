@@ -12,7 +12,7 @@
       <%= link_to 'Add new Skill', new_skill_path,
                                     remote: true,
                                     data: {toggle: "modal", target: "#new-snippet"},
-                                    class: "btn btn-block btn-info" %>
+                                    class: "btn btn-block btn-info btn-add-snippet" %>
     </div>
     <div class="panel-body" id="skills">
       <% @skills.each do |skill| %>

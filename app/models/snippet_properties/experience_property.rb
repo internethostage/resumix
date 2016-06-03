@@ -4,8 +4,8 @@ class SnippetProperties::ExperienceProperty
   attribute :title, String
   attribute :organization, String
   attribute :location, String
-  attribute :start_date, Date
-  attribute :end_date, Date
+  attribute :start_date, String
+  attribute :end_date, String
   attribute :details, String
 
   def self.dump(properties)

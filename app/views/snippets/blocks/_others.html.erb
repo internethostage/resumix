@@ -12,7 +12,7 @@
       <%= link_to 'Add new Other', new_other_path,
                                     remote: true,
                                     data: {toggle: "modal", target: "#new-snippet"},
-                                    class: "btn btn-block btn-info" %>
+                                    class: "btn btn-block btn-info btn-add-snippet" %>
     </div>
     <div class="panel-body" id="others">
       <% @others.each do |other| %>

@@ -137,11 +137,21 @@ a:active {
 }
 
 span.snippet-title {
-    font-weight: bold;
-    font-style: oblique;
-    text-decoration: underline;
+  font-weight: bold;
+  font-style: oblique;
+  text-decoration: underline;
 }
 
 .snippet-controls {
     text-align: right;
+}
+
+.well-snippet {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.snippet-name {
+  color: #009688;
+  font-size: 1.1em;
 }

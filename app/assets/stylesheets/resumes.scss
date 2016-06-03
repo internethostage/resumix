@@ -1,0 +1,68 @@
+// Place all the styles related to the resumes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1#resume {
+  text-align: center;
+}
+
+#resumebox {
+  padding: 10px;
+  min-height: 800px;
+  border: 1px solid #DEDEDE;
+  background: #f2f5f6;
+  background: -moz-linear-gradient(top,  #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%);
+  background: -webkit-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%);
+  background: linear-gradient(to bottom,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 );
+}
+
+.snippets-accordion {
+  margin-left: 20px;
+}
+
+.placeholder {
+  font-size: 2em;
+  text-align: center;
+  margin-top: 70px;
+  color: #9A9A9A;
+  text-shadow: 2px 2px 2px #FFFFFF;
+}
+
+resumetext {
+  font-size: 1em;
+  color: black;
+}
+
+div#trash {
+  text-align: right;
+}
+
+.resume-help {
+  color: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: linear-gradient(270deg, #00706c, #7ba39a, #007b67);
+  background-size: 600% 600%;
+
+  -webkit-animation: helpbox 59s ease infinite;
+  -moz-animation: helpbox 59s ease infinite;
+  animation: helpbox 59s ease infinite;
+
+  @-webkit-keyframes helpbox {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+  @-moz-keyframes helpbox {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+  @keyframes helpbox {
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+  }
+}
