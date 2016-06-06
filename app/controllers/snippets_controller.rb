@@ -1,4 +1,5 @@
 class SnippetsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_snippet, only: [:show, :edit, :update, :destroy]
   before_action :all_user_snippets_by_type, only: [:index, :create, :update]
   before_action :set_type

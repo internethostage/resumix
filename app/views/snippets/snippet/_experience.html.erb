@@ -1,5 +1,5 @@
 <div class="well well-sm well-snippet" id="<%= dom_id(experience) %>">
-  <div class="snippet-name"> <%= experience.name %> </div>
+  <div class="snippet-name" data-id="<%= experience.id %>"> <%= experience.name %> </div>
   <ul>
     <% experience.properties.to_hash.each do |prop, value| %>
       <% unless value == "" || value == nil %>

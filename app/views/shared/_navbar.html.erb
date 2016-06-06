@@ -13,6 +13,8 @@
     <div class="collapse navbar-collapse" id="navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="<%= 'active' if current_page?(root_path) %>"><a href="<%= root_path %>">Home</a></li>
+        <li class="<%= 'active' if current_page?(resumes_path) %>"><a href="<%= resumes_path %>"> My Resumes</a></li>
+        <li class="<%= 'active' if current_page?(new_resume_path) %>"><a href="<%= new_resume_path %>"> Create new Resume</a></li>
         <li class="<%= 'active' if current_page?(snippets_path) %>"><a href="<%= snippets_path %>">Snippet Toolbox</a></li>
       </ul>
 

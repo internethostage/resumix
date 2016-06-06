@@ -1,16 +1,32 @@
 class ResumesController < ApplicationController
+  before_action :authenticate_user!
   before_action :all_user_snippets_by_type, only: [:new, :index, :create, :update]
 
   def index
+    @resumes = current_user.resumes
   end
 
   def show
+    @resume = Resume.find(params[:id])
+    @resume_snippets = ResumeSnippet.where(resume_id: @resume)
   end
 
   def new
+    @resume = Resume.new
   end
 
   def create
+    @resume = Resume.new(name: params[:name])
+    @resume.user = current_user
+    @resume.save
+    params[:snippet].each do |key,value|
+      @resume_snippet = ResumeSnippet.new(position: value[:position], snippet_id: value[:id])
+      @resume_snippet.resume = @resume
+      @resume_snippet.save
+    end
+
+    render :js => "window.location = '#{resume_path(@resume)}'"
+
   end
 
   def edit
@@ -20,6 +36,13 @@ class ResumesController < ApplicationController
   end
 
   def destroy
+  end
+
+  def sort
+    params[:order].each do |key,value|
+      ResumeSnippet.find(value[:snippet_id]).update_attribute(:position,value[:position])
+    end
+    render :nothing => true
   end
 
   private
