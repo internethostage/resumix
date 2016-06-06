@@ -1,153 +1,84 @@
-// Place all the styles related to the resumes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
 
-h1#resume {
-  text-align: center;
-}
-
-#resumebox {
-  padding: 10px;
-  min-height: 800px;
-  border: 1px solid #DEDEDE;
-  background: #f2f5f6;
-  background: -moz-linear-gradient(top,  #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%);
-  background: -webkit-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%);
-  background: linear-gradient(to bottom,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 );
-  padding-bottom: 50px;
-  margin-bottom: 100px;
-}
-
-.snippets-accordion {
-  margin-left: 20px;
-}
-
-.placeholder {
-  font-size: 2em;
-  text-align: center;
-  margin-top: 70px;
-  color: #9A9A9A;
-  text-shadow: 2px 2px 2px #FFFFFF;
-}
-
-.ui-sortable-helper {
-  border: 1px dashed #CCC;
-  background-color: #f9f9f9;
-}
-
-resumetext {
-  font-size: 1em;
-  color: black;
-}
-
-div#trash {
-  text-align: right;
-}
-
-#save-resume-form {
-  padding-top: 10px;
-  text-align: center
-}
-
-.resume-help {
-  display: none;
-  color: white;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  background: linear-gradient(270deg, #00706c, #7ba39a, #007b67);
-  background-size: 600% 600%;
-
-  -webkit-animation: helpbox 59s ease infinite;
-  -moz-animation: helpbox 59s ease infinite;
-  animation: helpbox 59s ease infinite;
-
-  @-webkit-keyframes helpbox {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
-  }
-  @-moz-keyframes helpbox {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
-  }
-  @keyframes helpbox {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
-  }
-}
-
-// Customize here the display of the resume template 1
-
-#resume-preview-box {
-  padding-top: 20px;
-  padding-left: 20px;
-  padding-bottom: 50px;
-  margin-bottom: 100px;
-  min-height: 800px;
-  border: 1px solid #DEDEDE;
-}
+@include make-grid(sm);
+@include make-grid(md);
+@include make-grid(lg);
 
 #resume-section-title {
   font-size: 1.8em;
   padding-top: 15px;
+  color: #3d85c6;
+  padding-left: 20px;
+  width: 230px;
 }
 
 .resume-end-of-section-block {
   padding-top: 10px;
 }
 
+.resume-detail {
+  text-align: center;
+}
+
 #resume-details-name {
-  font-size: 2em;
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #3d85c6;
 }
 
 #resume-details-address {
   display: inline;
   font-weight: 600;
+  color: #3d85c6;
 }
 
 #resume-details-address2 {
   display: inline;
   font-weight: 600;
+  color: #3d85c6;
 }
 
 #resume-details-zipcode {
   display: inline;
+  color: #3d85c6;
 }
 
 #resume-details-phone {
   display: inline;
+  color: #3d85c6;
 }
 
 #resume-details-email {
   display: inline;
   padding-left: 10px;
+  color: #3d85c6;
 }
 
 #resume-details-linkedin {
   font-size: 0.9em;
+  color: #3d85c6;
 }
 
 #resume-details-github {
   font-size: 0.9em;
+  color: #3d85c6;
 }
 
 #resume-summary-description {
-
 }
 
 #resume-experience-title {
   font-size: 1.1em;
   font-weight: 600;
   display: inline;
+  color: #3d85c6;
 }
 
 #resume-experience-organization {
   font-size: 1.1em;
   display: inline;
+  color: #3d85c6;
 }
 
 #resume-experience-location {
@@ -170,11 +101,13 @@ div#trash {
 #resume-education-title {
   font-size: 1.1em;
   font-weight: 600;
+  color: #3d85c6;
   display: inline;
 }
 
 #resume-education-institution {
   font-size: 1.1em;
+  color: #3d85c6;
   display: inline;
 }
 

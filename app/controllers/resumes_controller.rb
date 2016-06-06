@@ -9,6 +9,12 @@ class ResumesController < ApplicationController
   def show
     @resume = Resume.find(params[:id])
     @resume_snippets = ResumeSnippet.where(resume_id: @resume)
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "resume", layout: 'pdf.html.erb', :show_as_html => params[:debug].present?
+      end
+    end
   end
 
   def new
@@ -38,12 +44,6 @@ class ResumesController < ApplicationController
   def destroy
   end
 
-  def sort
-    params[:order].each do |key,value|
-      ResumeSnippet.find(value[:snippet_id]).update_attribute(:position,value[:position])
-    end
-    render :nothing => true
-  end
 
   private
 

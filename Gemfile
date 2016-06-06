@@ -34,7 +34,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'jquery-turbolinks'
 gem 'bootswatch-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-sass'
 
 # To make form making a ton easier
 gem 'simple_form'
@@ -47,6 +47,11 @@ gem 'virtus'
 
 # Gem used for datepicker and drop n drag functionality
 gem 'jquery-ui-rails'
+
+# Gem used to export to PDF, second is the binary
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
