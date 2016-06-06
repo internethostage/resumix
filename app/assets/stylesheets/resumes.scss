@@ -15,6 +15,8 @@ h1#resume {
   background: -webkit-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%);
   background: linear-gradient(to bottom,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 );
+  padding-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 .snippets-accordion {
@@ -29,6 +31,11 @@ h1#resume {
   text-shadow: 2px 2px 2px #FFFFFF;
 }
 
+.ui-sortable-helper {
+  border: 1px dashed #CCC;
+  background-color: #f9f9f9;
+}
+
 resumetext {
   font-size: 1em;
   color: black;
@@ -38,7 +45,13 @@ div#trash {
   text-align: right;
 }
 
+#save-resume-form {
+  padding-top: 10px;
+  text-align: center
+}
+
 .resume-help {
+  display: none;
   color: white;
   padding: 15px;
   margin-bottom: 10px;
@@ -65,4 +78,214 @@ div#trash {
       50%{background-position:100% 50%}
       100%{background-position:0% 50%}
   }
+}
+
+// Customize here the display of the resume template 1
+
+#resume-preview-box {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-bottom: 50px;
+  margin-bottom: 100px;
+  min-height: 800px;
+  border: 1px solid #DEDEDE;
+}
+
+#resume-section-title {
+  font-size: 1.8em;
+  padding-top: 15px;
+}
+
+.resume-end-of-section-block {
+  padding-top: 10px;
+}
+
+#resume-details-name {
+  font-size: 2em;
+}
+
+#resume-details-address {
+  display: inline-block;
+  font-weight: 600;
+}
+
+#resume-details-address2 {
+  display: inline-block;
+  font-weight: 600;
+}
+
+#resume-details-zipcode {
+  display: inline-block;
+}
+
+#resume-details-phone {
+  display: inline;
+}
+
+#resume-details-email {
+  display: inline;
+  padding-left: 10px;
+}
+
+#resume-details-linkedin {
+  font-size: 0.9em;
+}
+
+#resume-details-github {
+  font-size: 0.9em;
+}
+
+#resume-summary-description {
+  
+}
+
+#resume-experience-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  display: inline-block;
+}
+
+#resume-experience-organization {
+  font-size: 1.1em;
+  display: inline-block;
+}
+
+#resume-experience-location {
+  font-size: 1.1em;
+  display: inline-block;
+  font-style: italic;
+  padding-left: 5px;
+}
+
+#resume-experience-start-date {
+  display: inline-block;
+  font-size: 0.9em;
+}
+
+#resume-experience-end-date {
+  display: inline-block;
+  font-size: 0.9em;
+}
+
+#resume-education-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  display: inline-block;
+}
+
+#resume-education-institution {
+  font-size: 1.1em;
+  display: inline-block;
+}
+
+#resume-education-location {
+  font-size: 1.1em;
+  display: inline-block;
+  font-style: italic;
+  padding-left: 5px;
+}
+
+#resume-education-start-date {
+  display: inline-block;
+  font-size: 0.9em;
+}
+
+#resume-education-end-date {
+  display: inline-block;
+  font-size: 0.9em;
+}
+
+#resume-skill-skill {
+  font-size: 1.1em;
+  font-weight: 600;
+  display: inline-block;
+}
+
+#resume-skill-level {
+  font-size: 1.1em;
+  display: inline-block;
+}
+
+#resume-skill-description {
+  font-size: 0.9em;
+}
+
+#resume-language-language {
+  font-size: 1.1em;
+  font-weight: 600;
+  display: inline-block;
+}
+
+#resume-language-level {
+  font-size: 1.1em;
+  display: inline-block;
+}
+
+#resume-accomplishment-accomplishment {
+  font-size: 1.1em;
+  font-weight: 600;
+  display: inline-block;
+}
+
+#resume-accomplishment-description {
+  font-size: 0.9em;
+}
+
+#resume-interest-interest {
+  font-size: 1.1em;
+  font-weight: 600;
+  display: inline-block;
+}
+
+#resume-interest-description {
+  font-size: 0.9em;
+}
+
+#resume-other-title {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+#resume-other-custom {
+  font-size: 0.9em;
+}
+
+#resume-other-custom2 {
+  font-size: 0.9em;
+}
+
+#resume-other-start-date {
+  display: inline-block;
+  font-size: 0.9em;
+}
+
+#resume-other-end-date {
+  display: inline-block;
+  font-size: 0.9em;
+}
+
+#resume-reference-fullname {
+  font-size: 1.1em;
+  font-weight: 600;
+  display: inline-block;
+}
+
+#resume-reference-position {
+  font-size: 1.1em;
+  display: inline-block;
+}
+
+#resume-reference-company {
+  font-size: 1.1em;
+  font-style: italic;
+  display: inline-block;
+}
+
+#resume-reference-phone {
+  display: inline;
+}
+
+#resume-reference-email {
+  display: inline;
+  padding-left: 10px;
 }

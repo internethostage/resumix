@@ -3,8 +3,11 @@ $(document).on('page:change', function(){
     event.preventDefault();
     var snippet_ids = []
     var resume_name = $('#name').val()
-    $('resumetext').each(function(i){
-            snippet_ids.push({ id: $(this).children().first().data("id")});
+    $('#resumebox .snippet-name').each(function(i){
+            snippet_ids.push({
+                            id: $(this).data("id"),
+                            position: $(this).data("pos")
+                            });
           });
           console.log(snippet_ids);
           $.ajax({

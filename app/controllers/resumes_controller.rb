@@ -8,7 +8,7 @@ class ResumesController < ApplicationController
 
   def show
     @resume = Resume.find(params[:id])
-    @resume_snippets = @resume.snippets
+    @resume_snippets = ResumeSnippet.where(resume_id: @resume)
   end
 
   def new
@@ -20,7 +20,7 @@ class ResumesController < ApplicationController
     @resume.user = current_user
     @resume.save
     params[:snippet].each do |key,value|
-      @resume_snippet = ResumeSnippet.new(position: key, snippet_id: value[:id])
+      @resume_snippet = ResumeSnippet.new(position: value[:position], snippet_id: value[:id])
       @resume_snippet.resume = @resume
       @resume_snippet.save
     end
@@ -36,6 +36,13 @@ class ResumesController < ApplicationController
   end
 
   def destroy
+  end
+
+  def sort
+    params[:order].each do |key,value|
+      ResumeSnippet.find(value[:snippet_id]).update_attribute(:position,value[:position])
+    end
+    render :nothing => true
   end
 
   private
