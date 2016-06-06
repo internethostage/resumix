@@ -1,0 +1,6 @@
+<h1> Your Resumes </h1>
+<% @resumes.each do |r| %>
+<div class="well">
+  <%= link_to r.name, resume_path(r) %>
+</div>
+<% end %>

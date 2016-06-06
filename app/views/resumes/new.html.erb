@@ -1,8 +1,21 @@
 <div class="col-sm-6">
-<h1 id="resume">Resume Builder</h1>
-<div class="resume-help"> Drag and drop the resume pieces you want to add on your resume and once ready click on the save button at the bottom!</div>
-<div id="trash"><i class="fa fa-2x fa-trash" aria-hidden="true"></i></div>
-<div id="resumebox"><div class="placeholder">Drag and drop your resume snippets here</div></div>
+  <h1 id="resume">Resume Builder</h1>
+  <div class="resume-help"> Drag and drop the resume pieces you want to add on your resume and once ready click on the save button at the bottom!</div>
+  <div id="trash"><i class="fa fa-2x fa-trash" aria-hidden="true"></i></div>
+
+  <form class="form-inline">
+    <div class="form-group">
+      <label for="name">Resume Name</label>
+      <input type="text" class="form-control" id="name" placeholder="My Resume">
+    </div>
+    <button type="submit" class="btn btn-success" id="save-resume">Save Resume</button>
+  </form>
+
+
+  <div id="resumebox">
+    <div class="placeholder">Drag and drop your resume snippets here</div>
+  </div>
+
 </div>
 
 <div class="col-sm-offset-1 col-sm-5">
@@ -20,6 +33,7 @@
     <%= render 'snippets/blocks/summary' %>
   </div>
 </div>
+
 
 
 <!-- Edit Snippet Modal -->

@@ -1,5 +1,5 @@
 <div class="well well-sm well-snippet" id="<%= dom_id(endorsement) %>">
-  <div class="snippet-name"> <%= endorsement.name %> </div>
+  <div class="snippet-name" data-id="<%= endorsement.id %>"> <%= endorsement.name %> </div>
   <ul>
     <% endorsement.properties.to_hash.each do |prop, value| %>
       <% unless value == "" || value == nil %>

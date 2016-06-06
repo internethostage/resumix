@@ -1,0 +1,11 @@
+<div id="resumebox">
+  <% if @resume.accomplishments %>
+    <h1>Accomplishments</h1>
+    <% @resume.accomplishments.each do |s| %>
+      <% s.properties.to_hash.each.map do |prop, value| %>
+      <%= simple_format(value) %>
+      <br>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

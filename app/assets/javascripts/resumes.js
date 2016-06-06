@@ -13,6 +13,9 @@ $(document).on('page:change', function(){
         $(this).find(".placeholder").remove();
         $("<resumetext></resumetext>").html(ui.draggable.html() ).appendTo(this);
         $("resumetext .snippet-controls").remove();
+        $('resumetext').each(function(i){
+          $(this).children().first().attr("data-pos",i+1);
+        });
       }
     }).sortable({
       items: "resumetext:not(.placeholder)",

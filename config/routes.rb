@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   resources :skills,          controller: 'snippets', type: 'Skill'
   resources :summaries,       controller: 'snippets', type: 'Summary'
 
-  resources :resumes
+  resources :resumes do
+    resources :resume_snippets, only: [:create]
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
