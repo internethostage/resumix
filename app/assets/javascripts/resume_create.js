@@ -1,9 +1,11 @@
 $(document).on('page:change', function(){
-  // Make the snippets on the toolbox draggable
-  $(".well-snippet").draggable({
-    appendTo: "body",
-    helper: "clone",
-    connectToSortable: "#resumebox"
+  // Make the snippets on the toolbox draggable, listen on the parent in case of edit
+  $(".panel").on("mouseenter", ".well-snippet", function(){
+    $(".well-snippet").draggable({
+      appendTo: "body",
+      helper: "clone",
+      connectToSortable: "#resumebox"
+    });
   });
   // Make the resumebox sortabe (and droppable)
   $("#resumebox").sortable({
