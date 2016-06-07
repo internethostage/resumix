@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   resources :summaries,       controller: 'snippets', type: 'Summary'
 
   resources :resumes
+  resources :linkedin_scraper, only: [:index]
+
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

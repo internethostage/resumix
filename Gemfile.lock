@@ -252,6 +252,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   jquery-ui-rails
+  nokogiri
   omniauth-linkedin
   pg (~> 0.15)
   rails (= 4.2.6)

@@ -52,6 +52,9 @@ gem 'jquery-ui-rails'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
+# To scrape linkedin
+gem 'nokogiri'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

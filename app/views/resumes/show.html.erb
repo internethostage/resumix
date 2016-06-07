@@ -142,11 +142,13 @@
       <% @resume.skills.each do |s| %>
         <div class="resume-skill resume-piece" data-id="<%= s.id %>">
           <div id="resume-skill-skill">
-            <%= s.properties.skill %> -
+            <%= s.properties.skill %>
           </div>
+          <% if s.properties.level %>
           <div id="resume-skill-level">
-            <%= s.properties.level %>
+            - <%= s.properties.level %>
           </div>
+          <% end %>
           <% unless s.properties.description == nil || s.properties.description == "" %>
           <br>
           <div id="resume-skill-description">
