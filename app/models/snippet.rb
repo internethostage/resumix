@@ -17,6 +17,8 @@ class Snippet < ActiveRecord::Base
   scope :skills,          -> { where(type: 'Skill') }
   scope :summaries,       -> { where(type: 'Summary') }
 
+  validates :name, uniqueness: true
+
   class << self
     def types
       %w(Accomplishment Detail Education Endorsement Experience Interest Language Other Skill Summary)
