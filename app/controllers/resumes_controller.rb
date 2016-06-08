@@ -12,8 +12,10 @@ class ResumesController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        # use .pdf?debug=1 to view as html (for easier css styling)
-        render pdf: "resume", layout: 'pdf.html.erb', :show_as_html => params[:debug].present?
+        if params[:template] == "1"
+          # use .pdf?debug=1 to view as html (for easier css styling)
+          render pdf: "resume", layout: 'pdf.html.erb', :show_as_html => params[:debug].present?
+        end
       end
     end
   end

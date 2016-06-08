@@ -1,6 +1,9 @@
 <!-- This is Template 1 -->
-<div class="text-center">
-<%= link_to resume_path(format: 'pdf'), class: "btn download-pdf-button btn-lg" do %>
+<div class="text-center btn-toolbar btn-group-download-pdf">
+<%= link_to resume_path(format: 'pdf'), class: "btn btn-lg btn-info" do %>
+  <i class="fa fa-file-text-o" aria-hidden="true"></i>  Download PDF
+<% end %>
+<%= link_to resume_path(format: 'pdf'), class: "btn btn-lg btn-danger" do %>
   <i class="fa fa-file-text-o" aria-hidden="true"></i>  Download PDF
 <% end %>
 </div>
