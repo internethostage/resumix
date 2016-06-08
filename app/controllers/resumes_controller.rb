@@ -1,14 +1,21 @@
 class ResumesController < ApplicationController
   before_action :authenticate_user!
   before_action :all_user_snippets_by_type, only: [:new, :index, :create, :update]
+  before_action :find_resume, only: [:show, :destroy]
 
   def index
     @resumes = current_user.resumes
   end
 
   def show
-    @resume = Resume.find(params[:id])
     @resume_snippets = ResumeSnippet.where(resume_id: @resume)
+    respond_to do |format|
+      format.html
+      format.pdf do
+        # use .pdf?debug=1 to view as html (for easier css styling)
+        render pdf: "resume", layout: 'pdf.html.erb', :show_as_html => params[:debug].present?
+      end
+    end
   end
 
   def new
@@ -36,16 +43,16 @@ class ResumesController < ApplicationController
   end
 
   def destroy
+    @resume.destroy
+    redirect_to resumes_path, alert: "Resume deleted successfully"
   end
 
-  def sort
-    params[:order].each do |key,value|
-      ResumeSnippet.find(value[:snippet_id]).update_attribute(:position,value[:position])
-    end
-    render :nothing => true
-  end
 
   private
+
+  def find_resume
+    @resume = Resume.find(params[:id])
+  end
 
   def all_user_snippets_by_type
     @accomplishments = current_user.accomplishments.order(name: :ASC)

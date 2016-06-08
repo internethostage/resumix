@@ -1,6 +1,12 @@
-<h1> Your Resumes </h1>
-<% @resumes.each do |r| %>
-<div class="well">
-  <%= link_to r.name, resume_path(r) %>
+<div class="col-md-offset-3 col-md-6">
+  <h1 class="text-center"> Your Resumes </h1>
+  <% @resumes.each do |r| %>
+  <div class="well">
+    <%= link_to r.name, resume_path(r), class: "resume-title" %>
+    <%= link_to 'Delete', resume_path(r),
+                          method: :delete,
+                          data: { confirm: 'Are you sure you want to delete ' + r.name + '?' },
+                          class: "pull-right btn btn-sm btn-danger" %>
+  </div>
+  <% end %>
 </div>
-<% end %>

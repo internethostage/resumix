@@ -1,3 +1,34 @@
-// Place all the styles related to the static_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.front-page-jumbotron {
+  margin-top: -20px;
+  margin-bottom: 0px;
+  background: #feffff;
+  background: -moz-linear-gradient(top,  #feffff 0%, #d2ebf9 100%);
+  background: -webkit-linear-gradient(top,  #feffff 0%,#d2ebf9 100%);
+  background: linear-gradient(to bottom,  #feffff 0%,#d2ebf9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#d2ebf9',GradientType=0 );
+
+}
+
+h1.front-page-jumbotron-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 4em;
+}
+
+.front-page-jumbotron-subtitle {
+  text-align: center;
+  font-size: 2.2em !important;
+  padding-bottom: 20px;
+}
+
+.front-page-jumbotron-register-text {
+  text-align: center;
+}
+
+.front-page-section-two {
+
+}
+
+.front-page-section-three {
+  height: 500px;
+}

@@ -1,0 +1,2 @@
+module LinkedinScraperHelper
+end

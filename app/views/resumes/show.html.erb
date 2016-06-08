@@ -1,5 +1,10 @@
 <!-- This is Template 1 -->
-<div id="trash"><i class="fa fa-2x fa-trash" aria-hidden="true"></i></div>
+<div class="text-center">
+<%= link_to resume_path(format: 'pdf'), class: "btn download-pdf-button btn-lg" do %>
+  <i class="fa fa-file-text-o" aria-hidden="true"></i>  Download PDF
+<% end %>
+</div>
+
 <div id="resume-preview-box" class="sortable">
 
   <div id="resume-details">
@@ -143,11 +148,13 @@
       <% @resume.skills.each do |s| %>
         <div class="resume-skill resume-piece" data-id="<%= s.id %>">
           <div id="resume-skill-skill">
-            <%= s.properties.skill %> -
+            <%= s.properties.skill %>
           </div>
+          <% if s.properties.level %>
           <div id="resume-skill-level">
-            <%= s.properties.level %>
+            - <%= s.properties.level %>
           </div>
+          <% end %>
           <% unless s.properties.description == nil || s.properties.description == "" %>
           <br>
           <div id="resume-skill-description">
