@@ -1,7 +1,8 @@
 require 'open-uri'
 
 class LinkedinScraperController < ApplicationController
-
+  before_action :authenticate_user!
+  
   def index
     begin
       linkedin_profile = current_user.auth_raw_data.info.urls.public_profile

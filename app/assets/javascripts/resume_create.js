@@ -3,7 +3,6 @@ $(document).on('page:change', function(){
   $(".panel").on("mouseenter", ".well-snippet", function(){
     $(".well-snippet").draggable({
       appendTo: "body",
-      helper: "clone",
       connectToSortable: "#resumebox"
     });
   });

@@ -8,6 +8,13 @@ h1#resume {
   margin-left: 150px;
 }
 
+.resume-title {
+  font-size: 2em;
+}
+.resume-title:hover {
+  opacity: 0.5;
+}
+
 #resumebox {
   position: fixed;
   overflow-y: scroll;
