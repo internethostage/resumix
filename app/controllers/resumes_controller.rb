@@ -10,7 +10,15 @@ class ResumesController < ApplicationController
   def show
     @resume_snippets = ResumeSnippet.where(resume_id: @resume)
     respond_to do |format|
-      format.html
+      format.html do
+        if params[:template] == "1"
+          render layout: 'template1'
+        elsif params[:template] == "2"
+          render layout: 'template2'
+        else
+          render
+        end
+      end
       format.pdf do
         # use .pdf?template=2&debug=1 to view as html (for easier css styling)
         if params[:template] == "0"

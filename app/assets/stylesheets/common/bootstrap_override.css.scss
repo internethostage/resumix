@@ -6,6 +6,7 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#286a91', endColorstr='#0f1a26',GradientType=0 );
 }
 
+
 //Import bootstrap-sprockets
 @import "bootstrap-sprockets";
 
@@ -33,6 +34,15 @@ body { padding-top: 80px; }
 .alert-notice {
   @extend .alert-success;
 }
+
+.h1 {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+}
+
 
 .btn-add-snippet {
   padding: 3px 15px;
