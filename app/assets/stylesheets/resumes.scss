@@ -19,17 +19,16 @@ h1#resume {
   position: fixed;
   overflow-y: scroll;
   padding: 10px;
-  height: 550px;
-  width: 600px;
+  padding-bottom: 80px;
+  height: 70%;
+  width: 55%;
+  margin-top: 120px;
   border: 1px solid #DEDEDE;
   background: #f2f5f6;
   background: -moz-linear-gradient(top,  #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%);
   background: -webkit-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%);
   background: linear-gradient(to bottom,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 );
-  padding-bottom: 50px;
-  margin-top: 120px;
-  margin-bottom: 100px;
 }
 
 .snippets-accordion {
