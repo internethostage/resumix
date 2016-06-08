@@ -29,10 +29,12 @@ body { padding-top: 80px; }
 // To display alerts
 .alert-alert {
   @extend .alert-danger;
+  text-align: center;
 }
 // To display notices
 .alert-notice {
   @extend .alert-success;
+  text-align: center;
 }
 
 .h1 {
