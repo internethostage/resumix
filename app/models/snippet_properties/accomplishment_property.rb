@@ -11,4 +11,5 @@ class SnippetProperties::AccomplishmentProperty
   def self.load(properties)
     new(properties)
   end
+
 end
