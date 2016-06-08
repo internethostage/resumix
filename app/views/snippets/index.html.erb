@@ -16,6 +16,40 @@
   </div>
 </div>
 
+<% if current_user.provider == "linkedin" %>
+  <div class="row">
+    <div class="col-md-offset-3 col-md-6">
+      <div class="resume-help">
+        <div class="text-center h4">Import From Linkedin <i class="fa fa-linkedin-square" aria-hidden="true"></i></div>
+        <br>
+        <div class="text-center">
+          <div class="btn-group-sm">
+            <%= link_to linkedin_scraper_index_path(:type => "skills"), class: "btn btn-sm btn-primary" do %>
+            <i class="fa fa-rocket" aria-hidden="true"></i> Import my Skills
+            <% end %>
+            <%= link_to linkedin_scraper_index_path(:type => "languages"), class: "btn btn-sm btn-primary" do %>
+            <i class="fa fa-globe" aria-hidden="true"></i> Import my Languages
+            <% end %>
+            <%= link_to linkedin_scraper_index_path(:type => "summary"), class: "btn btn-sm btn-primary" do %>
+            <i class="fa fa-commenting" aria-hidden="true"></i> Import my Profile Summary
+            <% end %>
+            <br>
+            <br>
+            <span class="label label-danger">Experimental</span>
+            <br>
+            <br>
+            <%= link_to linkedin_scraper_index_path(:type => "education"), class: "btn btn-sm btn-primary" do %>
+            <i class="fa fa-graduation-cap" aria-hidden="true"></i> Import my Education Details
+            <% end %>
+            <%= link_to linkedin_scraper_index_path(:type => "experience"), class: "btn btn-sm btn-primary" do %>
+            <i class="fa fa-briefcase" aria-hidden="true"></i> Import my Work Experience Details
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
 
 <!-- Edit Snippet Modal -->
 <div class="modal fade" id="edit-snippet" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

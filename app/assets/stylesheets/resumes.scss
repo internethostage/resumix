@@ -58,36 +58,37 @@ div#trash {
   text-align: center;
   position: fixed;
   margin-top: 60px;
-  margin-left: 60px;
+  margin-left: 120px;
 }
 
 .resume-help {
-  display: none;
   color: white;
   padding: 15px;
+  margin-top: 50px;
+  margin-left: 19px;
   margin-bottom: 10px;
   border-radius: 10px;
-  background: linear-gradient(270deg, #00706c, #7ba39a, #007b67);
+  background: linear-gradient(270deg, rgba(20, 185, 170, 1), rgba(16, 108, 106, 1), rgba(84, 155, 154, 1));
   background-size: 600% 600%;
 
-  -webkit-animation: helpbox 59s ease infinite;
-  -moz-animation: helpbox 59s ease infinite;
-  animation: helpbox 59s ease infinite;
+  -webkit-animation: helpbox 21s ease infinite;
+  -moz-animation: helpbox 21s ease infinite;
+  animation: helpbox 21s ease infinite;
 
   @-webkit-keyframes helpbox {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
+      0%{background-position:94% 0%}
+      50%{background-position:7% 100%}
+      100%{background-position:94% 0%}
   }
   @-moz-keyframes helpbox {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
+      0%{background-position:94% 0%}
+      50%{background-position:7% 100%}
+      100%{background-position:94% 0%}
   }
   @keyframes helpbox {
-      0%{background-position:0% 50%}
-      50%{background-position:100% 50%}
-      100%{background-position:0% 50%}
+      0%{background-position:94% 0%}
+      50%{background-position:7% 100%}
+      100%{background-position:94% 0%}
   }
 }
 
