@@ -1,11 +1,16 @@
-<!-- This is Template 1 -->
-<div class="text-center btn-toolbar btn-group-download-pdf">
-<%= link_to resume_path(format: 'pdf'), class: "btn btn-lg btn-info" do %>
-  <i class="fa fa-file-text-o" aria-hidden="true"></i>  Download PDF
-<% end %>
-<%= link_to resume_path(format: 'pdf'), class: "btn btn-lg btn-danger" do %>
-  <i class="fa fa-file-text-o" aria-hidden="true"></i>  Download PDF
-<% end %>
+<!-- This is Template 0 -->
+<div class="text-center">
+  <div class="btn-group-md btn-group-download-pdf">
+    <%= link_to resume_path(format: 'pdf', template: "0"), class: "btn btn-primary" do %>
+      <i class="fa fa-file-text-o" aria-hidden="true"></i>  Download this template PDF
+    <% end %>
+    <%= link_to resume_path(format: 'pdf', template: "1"), class: "btn btn-info" do %>
+      <i class="fa fa-file-text-o" aria-hidden="true"></i>  Download blue template PDF
+    <% end %>
+    <%= link_to resume_path(format: 'pdf', template: "2"), class: "btn btn-danger" do %>
+      <i class="fa fa-file-text-o" aria-hidden="true"></i>  Download red template PDF
+    <% end %>
+  </div>
 </div>
 
 <div id="resume-preview-box" class="sortable">

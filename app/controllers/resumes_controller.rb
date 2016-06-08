@@ -12,9 +12,13 @@ class ResumesController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        if params[:template] == "1"
-          # use .pdf?debug=1 to view as html (for easier css styling)
+        # use .pdf?template=2&debug=1 to view as html (for easier css styling)
+        if params[:template] == "0"
           render pdf: "resume", layout: 'pdf.html.erb', :show_as_html => params[:debug].present?
+        elsif params[:template] == "1"
+          render pdf: "resume", layout: 'pdf1.html.erb', :show_as_html => params[:debug].present?
+        elsif params[:template] == "2"
+          render pdf: "resume", layout: 'pdf2.html.erb', :show_as_html => params[:debug].present?
         end
       end
     end
