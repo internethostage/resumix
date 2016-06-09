@@ -57,6 +57,10 @@
   <div id="resume-details">
     <% if @resume.details.any? %>
       <% @resume.details.each do |s| %>
+
+      <div class="resume-details-initials">
+        <%= s.properties.first_name[0] %><%= s.properties.last_name[0] %>
+      </div>
         <div class="resume-detail resume-piece" data-id="<%= s.id %>">
           <div id="resume-details-name">
             <%= s.properties.first_name %>

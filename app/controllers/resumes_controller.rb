@@ -14,7 +14,7 @@ class ResumesController < ApplicationController
         if params[:template] == "1"
           render layout: 'template1'
         elsif params[:template] == "2"
-          render layout: 'template2'
+          render "show2", layout: 'template2'
         else
           render
         end
@@ -26,7 +26,7 @@ class ResumesController < ApplicationController
         elsif params[:template] == "1"
           render pdf: "resume", layout: 'pdf1.html.erb', :show_as_html => params[:debug].present?
         elsif params[:template] == "2"
-          render pdf: "resume", layout: 'pdf2.html.erb', :show_as_html => params[:debug].present?
+          render template: "resumes/show2", pdf: "resume", layout: 'pdf2.html.erb', :show_as_html => params[:debug].present?
         end
       end
     end
