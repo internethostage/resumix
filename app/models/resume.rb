@@ -5,6 +5,6 @@ class Resume < ActiveRecord::Base
 
   delegate :accomplishments, :details, :educations, :experiences, :interests, :languages, :others, :endorsements, :skills, :summaries, to: :snippets
 
-  validates :name, uniqueness: true
-  
+  validates :name, presence: true, uniqueness: true
+
 end
