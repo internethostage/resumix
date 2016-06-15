@@ -15,7 +15,7 @@
                                         class: "btn btn-block btn-info btn-add-snippet" %>
     </div>
     <div class="panel-body" id="experiences">
-      <% @experiences.each do |experience| %>
+      <% @snippets["Experience"].each do |experience| %>
         <%= render 'snippets/snippet/experience', experience: experience %>
       <% end %>
     </div>

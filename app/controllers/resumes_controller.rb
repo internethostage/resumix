@@ -8,7 +8,7 @@ class ResumesController < ApplicationController
   end
 
   def show
-    @resume_snippets = ResumeSnippet.where(resume_id: @resume)
+    @resume_snippets = current_user.resumes.find(@resume.id).snippets.group_by(&:type)
     respond_to do |format|
       format.html do
         if params[:template] == "1"
@@ -69,16 +69,7 @@ class ResumesController < ApplicationController
   end
 
   def all_user_snippets_by_type
-    @accomplishments = current_user.accomplishments.order(name: :ASC)
-    @details         = current_user.details.order(name: :ASC)
-    @educations      = current_user.educations.order(name: :ASC)
-    @endorsements    = current_user.endorsements.order(name: :ASC)
-    @experiences     = current_user.experiences.order(name: :ASC)
-    @interests       = current_user.interests.order(name: :ASC)
-    @languages       = current_user.languages.order(name: :ASC)
-    @others          = current_user.others.order(name: :ASC)
-    @skills          = current_user.skills.order(name: :ASC)
-    @summaries       = current_user.summaries.order(name: :ASC)
+    @snippets = current_user.snippets.group_by(&:type)
   end
 
 end

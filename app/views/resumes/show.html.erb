@@ -51,12 +51,12 @@
   </div>
 </div>
 
-
+<!-- Resume Preview -->
 <div id="resume-preview-box" class="sortable">
 
   <div id="resume-details">
-    <% if @resume.details.any? %>
-      <% @resume.details.each do |s| %>
+    <% if @resume_snippets["Detail"] %>
+      <% @resume_snippets["Detail"].each do |s| %>
         <div class="resume-detail resume-piece" data-id="<%= s.id %>">
           <div id="resume-details-name">
             <%= s.properties.first_name %>
@@ -93,11 +93,11 @@
   </div>
 
   <div id="resume-summary">
-    <% if @resume.summaries.any? %>
+    <% if @resume_snippets["Summary"] %>
       <div id="resume-section-title">
         Summary:
       </div>
-      <% @resume.summaries.each do |s| %>
+      <% @resume_snippets["Summary"].each do |s| %>
         <div class="resume-summary resume-piece" data-id="<%= s.id %>">
           <div id="resume-summary-description">
             <%= simple_format(s.properties.description) %>
@@ -108,11 +108,11 @@
   </div>
 
   <div id="resume-experience">
-    <% if @resume.experiences.any? %>
+    <% if @resume_snippets["Experience"] %>
       <div id="resume-section-title">
         Experience:
       </div>
-      <% @resume.experiences.each do |s| %>
+      <% @resume_snippets["Experience"].each do |s| %>
         <div class="resume-experience resume-piece" data-id="<%= s.id %>">
           <div id="resume-experience-title">
             <%= s.properties.title %> -
@@ -148,11 +148,11 @@
   </div>
 
   <div id="resume-education">
-    <% if @resume.educations.any? %>
+    <% if @resume_snippets["Education"] %>
       <div id="resume-section-title">
         Education:
       </div>
-      <% @resume.educations.each do |s| %>
+      <% @resume_snippets["Education"].each do |s| %>
         <div class="resume-education resume-piece" data-id="<%= s.id %>">
           <div id="resume-education-title">
             <%= s.properties.title %> -
@@ -188,11 +188,11 @@
   </div>
 
   <div id="resume-skill">
-    <% if @resume.skills.any? %>
+    <% if @resume_snippets["Skill"] %>
       <div id="resume-section-title">
         Skills:
       </div>
-      <% @resume.skills.each do |s| %>
+      <% @resume_snippets["Skill"].each do |s| %>
         <div class="resume-skill resume-piece" data-id="<%= s.id %>">
           <div id="resume-skill-skill">
             <%= s.properties.skill %>
@@ -217,11 +217,11 @@
   </div>
 
   <div id="resume-language">
-    <% if @resume.languages.any? %>
+    <% if @resume_snippets["Language"] %>
       <div id="resume-section-title">
         Languages:
       </div>
-      <% @resume.languages.each do |s| %>
+      <% @resume_snippets["Language"].each do |s| %>
         <div class="resume-language resume-piece" data-id="<%= s.id %>">
           <div id="resume-language-language">
             <%= s.properties.language %>:
@@ -236,11 +236,11 @@
   </div>
 
   <div id="resume-accomplishment">
-    <% if @resume.accomplishments.any? %>
+    <% if @resume_snippets["Accomplishment"] %>
       <div id="resume-section-title">
         Accomplishments:
       </div>
-      <% @resume.accomplishments.each do |s| %>
+      <% @resume_snippets["Accomplishment"].each do |s| %>
         <div class="resume-accomplishment resume-piece" data-id="<%= s.id %>">
           <div id="resume-accomplishment-accomplishment">
             <%= s.properties.accomplishment %>
@@ -257,11 +257,11 @@
   </div>
 
   <div id="resume-interest">
-    <% if @resume.interests.any? %>
+    <% if @resume_snippets["Interest"] %>
       <div id="resume-section-title">
         Interests:
       </div>
-      <% @resume.interests.each do |s| %>
+      <% @resume_snippets["Interest"].each do |s| %>
         <div class="resume-interest resume-piece" data-id="<%= s.id %>">
           <div id="resume-interest-interest">
             <%= s.properties.interest %>
@@ -278,11 +278,11 @@
   </div>
 
   <div id="resume-other">
-    <% if @resume.others.any? %>
+    <% if @resume_snippets["Other"] %>
       <div id="resume-section-title">
         Extras:
       </div>
-      <% @resume.others.each do |s| %>
+      <% @resume_snippets["Other"].each do |s| %>
         <div class="resume-other resume-piece" data-id="<%= s.id %>">
           <div id="resume-other-title">
             <%= s.properties.title %>
@@ -314,11 +314,11 @@
   </div>
 
   <div id="resume-reference">
-    <% if @resume.endorsements.any? %>
+    <% if @resume_snippets["Endorsement"] %>
       <div id="resume-section-title">
         References:
       </div>
-      <% @resume.endorsements.each do |s| %>
+      <% @resume_snippets["Endorsement"].each do |s| %>
         <div class="resume-reference resume-piece" data-id="<%= s.id %>">
           <div id="resume-reference-fullname">
             <%= s.properties.fullname %>,

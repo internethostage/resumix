@@ -15,7 +15,7 @@
                                         class: "btn btn-block btn-info btn-add-snippet" %>
     </div>
     <div class="panel-body" id="references">
-      <% @endorsements.each do |endorsement| %>
+      <% @snippets["Endorsement"].each do |endorsement| %>
         <%= render 'snippets/snippet/reference', endorsement: endorsement %>
       <% end %>
     </div>
