@@ -1,0 +1,345 @@
+<!-- This is Template 0 -->
+
+<!-- Template Select Bar -->
+<div class="text-center btn-group-download-pdf">
+  <div class="btn-group">
+    <button type="button" class="btn btn-primary">Default Template</button>
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="caret"></span>
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><%= link_to resume_path do %>
+        <i class="fa fa-file-text-o" aria-hidden="true"></i>  Preview
+      <% end %></li>
+      <li><%= link_to resume_path(format: 'pdf', template: "0") do %>
+        <i class="fa fa-download" aria-hidden="true"></i>  Download PDF
+      <% end %></li>
+    </ul>
+  </div>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-info">Blue Template</button>
+    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="caret"></span>
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><%= link_to resume_path(template: "1") do %>
+        <i class="fa fa-file-text-o" aria-hidden="true"></i>  Preview
+      <% end %></li>
+      <li><%= link_to resume_path(format: 'pdf', template: "1") do %>
+        <i class="fa fa-download" aria-hidden="true"></i>  Download PDF
+      <% end %></li>
+    </ul>
+  </div>
+
+  <div class="btn-group">
+    <button type="button" class="btn btn-danger">Red Template</button>
+    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <span class="caret"></span>
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><%= link_to resume_path(template: "2") do %>
+        <i class="fa fa-file-text-o" aria-hidden="true"></i>  Preview
+      <% end %></li>
+      <li><%= link_to resume_path(format: 'pdf', template: "2") do %>
+        <i class="fa fa-download" aria-hidden="true"></i>  Download PDF
+      <% end %></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Resume Preview -->
+<div id="resume-preview-box" class="sortable">
+
+  <div id="resume-details">
+    <% if @resume_snippets["Detail"] %>
+      <% @resume_snippets["Detail"].each do |s| %>
+        <div class="resume-detail resume-piece" data-id="<%= s.id %>">
+          <div id="resume-details-name">
+            <%= s.properties.first_name %>
+            <%= s.properties.last_name %>
+          </div>
+          <div id="resume-details-address">
+            <%= s.properties.address %>,
+          </div>
+          <div id="resume-details-address2">
+            <%= s.properties.address2 %>
+          </div>
+          <div id="resume-details-zipcode">
+            <%# s.properties.zipcode %>
+          </div>
+          <br>
+          <div id="resume-details-phone">
+            <i class="fa fa-phone" aria-hidden="true"></i> <%= s.properties.phone %>
+          </div>
+          <div id="resume-details-email">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i> <%= s.properties.email %>
+          </div>
+          <div id="resume-details-linkedin">
+            <i class="fa fa-linkedin-square" aria-hidden="true"></i> <%= s.properties.linkedin %>
+          </div>
+          <div id="resume-details-github">
+            <i class="fa fa-github" aria-hidden="true"></i> <%= s.properties.github %>
+          </div>
+          <div id="resume-details-other">
+            <%= s.properties.other %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="resume-summary">
+    <% if @resume_snippets["Summary"] %>
+      <div id="resume-section-title">
+        Summary:
+      </div>
+      <% @resume_snippets["Summary"].each do |s| %>
+        <div class="resume-summary resume-piece" data-id="<%= s.id %>">
+          <div id="resume-summary-description">
+            <%= simple_format(s.properties.description) %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="resume-experience">
+    <% if @resume_snippets["Experience"] %>
+      <div id="resume-section-title">
+        Experience:
+      </div>
+      <% @resume_snippets["Experience"].each do |s| %>
+        <div class="resume-experience resume-piece" data-id="<%= s.id %>">
+          <div id="resume-experience-title">
+            <%= s.properties.title %> -
+          </div>
+          <div id="resume-experience-organization">
+            <%= s.properties.organization %>.
+          </div>
+          <div id="resume-experience-location">
+            <%= s.properties.location %>
+          </div>
+          <br>
+          <div id="resume-experience-start-date">
+            <i class="fa fa-calendar" aria-hidden="true"></i> <%= s.properties.start_date %> -
+          </div>
+          <% if s.properties.end_date == nil %>
+          <div id="resume-experience-end-date">
+            Current
+          </div>
+          <% else %>
+          <div id="resume-experience-end-date">
+            <%= s.properties.end_date %>
+          </div>
+          <% end %>
+          <div id="resume-experience-details">
+            <li>
+            <%= s.properties.details.gsub(/\n/, '<li>').html_safe %>
+            </li>
+          </div>
+        </div>
+        <div class='resume-end-of-section-block'></div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="resume-education">
+    <% if @resume_snippets["Education"] %>
+      <div id="resume-section-title">
+        Education:
+      </div>
+      <% @resume_snippets["Education"].each do |s| %>
+        <div class="resume-education resume-piece" data-id="<%= s.id %>">
+          <div id="resume-education-title">
+            <%= s.properties.title %> -
+          </div>
+          <div id="resume-education-institution">
+            <%= s.properties.institution %>.
+          </div>
+          <div id="resume-education-location">
+            <%= s.properties.location %>
+          </div>
+          <br>
+          <div id="resume-education-start-date">
+            <i class="fa fa-calendar" aria-hidden="true"></i> <%= s.properties.start_date %> -
+          </div>
+          <% if s.properties.end_date == nil %>
+          <div id="resume-education-end-date">
+            Current
+          </div>
+          <% else %>
+          <div id="resume-education-end-date">
+            <%= s.properties.end_date %>
+          </div>
+          <% end %>
+          <div id="resume-education-details">
+            <li>
+            <%= s.properties.details.gsub(/\n/, '<li>').html_safe %>
+            </li>
+          </div>
+        </div>
+        <div class='resume-end-of-section-block' ></div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="resume-skill">
+    <% if @resume_snippets["Skill"] %>
+      <div id="resume-section-title">
+        Skills:
+      </div>
+      <% @resume_snippets["Skill"].each do |s| %>
+        <div class="resume-skill resume-piece" data-id="<%= s.id %>">
+          <div id="resume-skill-skill">
+            <%= s.properties.skill %>
+          </div>
+          <% if s.properties.level %>
+          <div id="resume-skill-level">
+            - <%= s.properties.level %>
+          </div>
+          <% end %>
+          <% unless s.properties.description == nil || s.properties.description == "" %>
+          <br>
+          <div id="resume-skill-description">
+            <li>
+            <%= s.properties.description.gsub(/\n/, '<li>').html_safe %>
+            </li>
+          </div>
+          <% end %>
+          <div class='resume-end-of-section-block'></div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="resume-language">
+    <% if @resume_snippets["Language"] %>
+      <div id="resume-section-title">
+        Languages:
+      </div>
+      <% @resume_snippets["Language"].each do |s| %>
+        <div class="resume-language resume-piece" data-id="<%= s.id %>">
+          <div id="resume-language-language">
+            <%= s.properties.language %>:
+          </div>
+          <div id="resume-language-level">
+            <%= s.properties.level %>
+          </div>
+          <br>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="resume-accomplishment">
+    <% if @resume_snippets["Accomplishment"] %>
+      <div id="resume-section-title">
+        Accomplishments:
+      </div>
+      <% @resume_snippets["Accomplishment"].each do |s| %>
+        <div class="resume-accomplishment resume-piece" data-id="<%= s.id %>">
+          <div id="resume-accomplishment-accomplishment">
+            <%= s.properties.accomplishment %>
+          </div>
+          <div id="resume-accomplishment-description">
+            <li>
+            <%= s.properties.description.gsub(/\n/, '<li>').html_safe %>
+            </li>
+          </div>
+          <div class='resume-end-of-section-block'></div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="resume-interest">
+    <% if @resume_snippets["Interest"] %>
+      <div id="resume-section-title">
+        Interests:
+      </div>
+      <% @resume_snippets["Interest"].each do |s| %>
+        <div class="resume-interest resume-piece" data-id="<%= s.id %>">
+          <div id="resume-interest-interest">
+            <%= s.properties.interest %>
+          </div>
+          <div id="resume-interest-description">
+            <li>
+            <%= s.properties.description.gsub(/\n/, '<li>').html_safe %>
+            </li>
+          </div>
+          <div class='resume-end-of-section-block'></div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="resume-other">
+    <% if @resume_snippets["Other"] %>
+      <div id="resume-section-title">
+        Extras:
+      </div>
+      <% @resume_snippets["Other"].each do |s| %>
+        <div class="resume-other resume-piece" data-id="<%= s.id %>">
+          <div id="resume-other-title">
+            <%= s.properties.title %>
+          </div>
+          <% unless s.properties.start_date == nil || s.properties.start_date == "" %>
+            <div id="resume-other-start-date">
+              <i class="fa fa-calendar" aria-hidden="true"></i> <%= s.properties.start_date %> -
+            </div>
+            <% if s.properties.end_date == nil || s.properties.end_date == "" %>
+              <div id="resume-other-end-date">
+                Current
+              </div>
+            <% else %>
+              <div id="resume-other-end-date">
+                <%= s.properties.end_date %>
+              </div>
+            <% end %>
+          <% end %>
+          <div id="resume-other-custom">
+            <%= s.properties.custom %>
+          </div>
+          <div id="resume-other-custom2">
+            <%= s.properties.custom2 %>
+          </div>
+          <div class='resume-end-of-section-block'></div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div id="resume-reference">
+    <% if @resume_snippets["Endorsement"] %>
+      <div id="resume-section-title">
+        References:
+      </div>
+      <% @resume_snippets["Endorsement"].each do |s| %>
+        <div class="resume-reference resume-piece" data-id="<%= s.id %>">
+          <div id="resume-reference-fullname">
+            <%= s.properties.fullname %>,
+          </div>
+          <div id="resume-reference-position">
+            <%= s.properties.position %> -
+          </div>
+          <div id="resume-reference-company">
+            <%= s.properties.company %>
+          </div>
+          <br>
+          <div id="resume-reference-phone">
+            <i class="fa fa-phone" aria-hidden="true"></i> <%= s.properties.phone %>
+          </div>
+          <div id="resume-reference-email">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i> <%= s.properties.email %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+
+</div>

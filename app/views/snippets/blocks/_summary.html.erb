@@ -1,0 +1,24 @@
+<div class = "panel panel-default">
+  <div class = "panel-heading">
+    <h4 class = "panel-title">
+      <a data-toggle = "collapse" data-parent = "#accordion" href = "#collapseTen">
+        Summary Snippets
+      </a>
+    </h4>
+  </div>
+
+  <div id = "collapseTen" class = "panel-collapse collapse">
+    <div class="add_new_button">
+      <%= link_to 'Add new Summary', new_summary_path,
+                                      remote: true,
+                                      data: {toggle: "modal", target: "#new-snippet"},
+                                      class: "btn btn-block btn-info btn-add-snippet" %>
+    </div>
+    <div class="panel-body" id="summaries">
+      <% @snippets["Summary"].each do |summary| %>
+        <%= render 'snippets/snippet/summary', summary: summary %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

@@ -34,10 +34,27 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'jquery-turbolinks'
 gem 'bootswatch-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-sass'
 
 # To make form making a ton easier
 gem 'simple_form'
+
+# To use sort and reorder a number of objects in a list
+gem 'acts_as_list'
+
+# To define atributes with type coercion before storing (snippet properties hstore)
+gem 'virtus'
+
+# Gem used for datepicker and drop n drag functionality
+gem 'jquery-ui-rails'
+
+# Gem used to export to PDF, second is the binary
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
+
+# To scrape linkedin
+gem 'nokogiri'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

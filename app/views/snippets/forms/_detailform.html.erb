@@ -1,0 +1,12 @@
+<%= f.simple_fields_for :properties, OpenStruct.new(f.object.properties.to_hash) do |ff| %>
+  <%= ff.input :first_name %>
+  <%= ff.input :last_name %>
+  <%= ff.input :address %>
+  <%= ff.input :address2 %>
+  <%= ff.input :zipcode %>
+  <%= ff.input :phone %>
+  <%= ff.input :email %>
+  <%= ff.input :linkedin %>
+  <%= ff.input :github %>
+  <%= ff.input :other %>
+<% end %>

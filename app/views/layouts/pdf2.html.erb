@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Resumix</title>
+    <%= stylesheet_link_tag "http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome-64.css", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css", media: "all", "data-turbolinks-track" => true %>
+    <%= wicked_pdf_stylesheet_link_tag 'pdf-templates/pdf2', media: 'all', 'data-turbolinks-track' => true %>
+  </head>
+  <body>
+    <div class="container">
+        <%= yield %>
+    </div>
+
+  </body>
+</html>

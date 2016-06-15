@@ -1,0 +1,24 @@
+<div class = "panel panel-default">
+  <div class = "panel-heading">
+    <h4 class = "panel-title">
+      <a data-toggle = "collapse" data-parent = "#accordion" href = "#collapseNine">
+        Skill Snippets
+      </a>
+    </h4>
+  </div>
+
+  <div id = "collapseNine" class = "panel-collapse collapse">
+    <div class="add_new_button">
+      <%= link_to 'Add new Skill', new_skill_path,
+                                    remote: true,
+                                    data: {toggle: "modal", target: "#new-snippet"},
+                                    class: "btn btn-block btn-info btn-add-snippet" %>
+    </div>
+    <div class="panel-body" id="skills">
+      <% @snippets["Skill"].each do |skill| %>
+        <%= render 'snippets/snippet/skill', skill: skill %>
+      <% end %>
+    </div>
+  </div>
+
+</div>

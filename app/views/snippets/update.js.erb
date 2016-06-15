@@ -1,0 +1,7 @@
+$("#edit-snippet").html("<%= j render 'modal_form' %>");
+<% if @type == "Endorsement" %>
+$('#references').html("<%= j render 'snippets/lists/referenceslist', endorsements: @endorsements %>")
+<% else %>
+$('#<%= @type.downcase.pluralize %>').html("<%= j render "snippets/lists/#{@type.downcase.pluralize}list", @type.downcase.pluralize => current_user.send(@type.downcase.pluralize).order(name: :asc) %>")
+<% end %>
+$("#edit-snippet").modal("hide")

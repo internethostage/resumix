@@ -1,0 +1,7 @@
+<% if @type == "Endorsement" %>
+$('#references').append("<%= j render 'snippets/snippet/reference', endorsement: @snippet, style: 'display: none' %>")
+<% else %>
+$('#<%= @type.downcase.pluralize %>').append("<%= j render "snippets/snippet/#{@type.downcase}", @type.downcase.to_sym => @snippet, style: 'display: none' %>")
+<% end %>
+$("#<%= dom_id(@snippet) %>").slideDown(700);
+$("#new-snippet").modal("hide")

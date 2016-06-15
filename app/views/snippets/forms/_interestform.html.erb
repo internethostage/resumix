@@ -1,0 +1,4 @@
+<%= f.simple_fields_for :properties, OpenStruct.new(f.object.properties.to_hash) do |ff| %>
+  <%= ff.input :interest, required: false%>
+  <%= ff.input :description, as: :text, required: false, input_html: { rows: 4 } %>
+<% end %>

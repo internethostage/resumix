@@ -1,0 +1,71 @@
+<div class="col-sm-6">
+  <h1 id="resume">Resume Builder</h1>
+
+  <form class="form-inline" id="save-resume-form">
+    <div class="form-group">
+      <input type="text" class="form-control" id="name" placeholder="My Resume">
+    </div>
+    <button type="submit" class="btn btn-success" id="save-resume">Save Resume</button>
+  </form>
+
+  <div id="resumebox">
+    <div class="placeholder">Drag and drop your resume snippets here.<br> Once finished adding content, give your resume a name and click on the save button!</div>
+  </div>
+
+</div>
+
+<div class="col-sm-offset-1 col-sm-5">
+<h2 class="text-center"> Resume Snippets</h2>
+  <div class="panel-group" id="accordion">
+    <%= render 'snippets/blocks/accomplishments' %>
+    <%= render 'snippets/blocks/details' %>
+    <%= render 'snippets/blocks/educations' %>
+    <%= render 'snippets/blocks/experiences' %>
+    <%= render 'snippets/blocks/interests' %>
+    <%= render 'snippets/blocks/languages' %>
+    <%= render 'snippets/blocks/others' %>
+    <%= render 'snippets/blocks/references' %>
+    <%= render 'snippets/blocks/skills' %>
+    <%= render 'snippets/blocks/summary' %>
+  </div>
+</div>
+
+
+
+<!-- Edit Snippet Modal -->
+<div class="modal fade" id="edit-snippet" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Edit Snippet</h4>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- New Snippet Modal -->
+<div class="modal fade" id="new-snippet" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add New Snippet</h4>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

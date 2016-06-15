@@ -1,0 +1,4 @@
+<%= f.simple_fields_for :properties, OpenStruct.new(f.object.properties.to_hash) do |ff| %>
+  <%= ff.input :language %>
+  <%= ff.input :level %>
+<% end %>

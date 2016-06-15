@@ -1,0 +1,23 @@
+<div class="well well-sm well-snippet" id="<%= dom_id(other) %>">  <div class="snippet-remove-hidden pull-right">
+    <a href="#" class='btn btn-danger btn-xs'><i class="fa fa-trash" aria-hidden="true"></i></a>
+  </div>
+  <div class="snippet-name" data-id="<%= other.id %>"> <%= other.name %> </div>
+  <ul>
+    <% other.properties.to_hash.each do |prop, value| %>
+      <% unless value == "" || value == nil %>
+        <li><span class="snippet-title"><%= prop.capitalize %></span>: <%= value %></li>
+      <% end %>
+    <% end %>
+  </ul>
+  <div class="snippet-controls">
+    <%= link_to 'Edit', sti_snippet_path(other.type, other.id, :edit),
+                        remote: true,
+                        data: {toggle: "modal", target: "#edit-snippet"},
+                        class: "btn btn-xs btn-warning" %>
+    <%= link_to 'Delete', sti_snippet_path(other.type, other.id),
+                          method: :delete,
+                          data: { confirm: 'Are you sure?' },
+                          class: "btn btn-xs btn-danger",
+                          remote: true %>
+  </div>
+</div>
