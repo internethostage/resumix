@@ -15,8 +15,10 @@
                                     class: "btn btn-block btn-info btn-add-snippet" %>
     </div>
     <div class="panel-body" id="details">
-      <% @snippets["Detail"].each do |detail| %>
-        <%= render 'snippets/snippet/detail', detail: detail %>
+      <% if @snippets["Detail"] %>
+        <% @snippets["Detail"].each do |detail| %>
+          <%= render 'snippets/snippet/detail', detail: detail %>
+        <% end %>
       <% end %>
     </div>
   </div>
