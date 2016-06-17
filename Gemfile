@@ -55,7 +55,6 @@ gem 'wkhtmltopdf-binary'
 # To scrape linkedin
 gem 'nokogiri'
 
-
 gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
