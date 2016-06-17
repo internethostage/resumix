@@ -17,7 +17,7 @@ class Snippet < ActiveRecord::Base
   scope :skills,          -> { where(type: 'Skill') }
   scope :summaries,       -> { where(type: 'Summary') }
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: {scope: :user}
 
   class << self
     def types
